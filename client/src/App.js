@@ -1,12 +1,19 @@
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from "./components/Header";
 
+// pending apollo client
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Movie Network</h1>
-      </header>
-    </div>
+    <Router>  
+      <div>
+        <Header />
+        <Routes>
+          {/* insert routes here */}
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
