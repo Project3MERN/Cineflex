@@ -26,7 +26,23 @@ const resolvers = {
         }
     },
     Mutation: {
-
+        login: async (parents, { email, password }) => {
+            const user = await User.findOne({ email })
+            if (!user) {
+                throw new AuthenticationError("This user does not exist in the database")
+            }
+            const checkPassword = await user.isCorrectPassword(password)
+            if (!checkPassword) {
+                throw new AuthenticationError("Incorrect password entered, please try again!")
+            }
+            const token = signToken(user)
+            return { token, user }
+        },
+        addUser: async (parent, args) => {
+            const user = await User.create(args)
+            const token = signToken(user)
+            return { token, user }
+        }
     }
 }
 
