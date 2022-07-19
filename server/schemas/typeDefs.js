@@ -34,7 +34,9 @@ const typeDefs = gql`
     }
 
     type Query {
-        user: User
+        users: [User]
+        loggedInUser: User
+        user(username: String!): User
         movie: Movie
         review: Review
     }
