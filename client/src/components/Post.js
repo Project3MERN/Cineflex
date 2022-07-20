@@ -1,8 +1,7 @@
 import React from 'react';
-import Comment from './Comment';
+// import Comment from './Comment';
 
 function Post(props) {
-
     const {
         title,
         review,
@@ -11,12 +10,9 @@ function Post(props) {
 
     return(
         <div>
-            <div>
-                <div>{title}</div>
-                <div>{review}</div>
-                <div>{rating}</div>
-                <Comment />
-            </div>
+            <div>{title}</div>
+            <div>{review}</div>
+            <div>{rating}</div>
         </div>
     )
 }

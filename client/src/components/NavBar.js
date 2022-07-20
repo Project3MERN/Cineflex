@@ -9,6 +9,9 @@ const NavBar = () => {
                     Home
                 </li>
                 <li>
+                    Explore
+                </li>
+                <li>
                     Login
                 </li>
             </ul>

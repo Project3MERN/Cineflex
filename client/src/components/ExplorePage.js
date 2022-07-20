@@ -1,10 +1,18 @@
 import React from 'react';
+import Post from './Post'
+// import Comment from './Comment';
 
-function ExplorePage() {
-    return (
+function ExplorePage({ posts }) {
+
+    return(
         <div>
-            {/* map out posts here */}
-            <Post />
+            <div>
+                {posts.map(post => {
+                    return (
+                        <Post key={post.id} {...post} />
+                    )
+                })}
+            </div>
         </div>
     )
 }
