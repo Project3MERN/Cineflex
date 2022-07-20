@@ -6,11 +6,13 @@ nav {
 
 nav ul {
     display: flex;
-    justify-content: space-around;
-    padding: 0;
+    justify-content: space-evenly;
     width: 100%;
+    padding: 0;
+    margin: 0;
 }
 
 nav ul li{
     list-style: none;
+    margin-left: 1%;
 }
