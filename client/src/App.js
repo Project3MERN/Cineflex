@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./components/Header";
-import ExplorePage from './components/ExplorePage';
+import ExplorePage from './pages/ExplorePage';
 import './css/app.css'
+import Dashboard from "./pages/Dashboard";
 
 // pending apollo client
 
@@ -14,6 +15,7 @@ function App() {
     <Router>  
         <Header />
         <ExplorePage posts={posts} />
+        <Dashboard />
     </Router>
   );
 }
