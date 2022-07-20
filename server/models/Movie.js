@@ -24,11 +24,11 @@ const movieSchema = new Schema(
 
 movieSchema.virtual('averageScore').get(function () {
     const totalScores = []
-    const scores = this.reviews.score
+    const scores = this.reviews
     for (let i = 0; i < scores.length; i++) {
-        totalScores.push(scores[i])
+        totalScores.push(scores[i].score)
     }
-    const averageScore = totalScores / scores
+    const averageScore = Math.round((totalScores.reduce((a, b) => a + b, 0) / totalScores.length) * 100) / 100
     return averageScore
 })
 

@@ -15,6 +15,7 @@ const typeDefs = gql`
         _id: ID
         name: String
         reviews: [Review]
+        averageScore: Float
     }
 
     type Review {
@@ -22,7 +23,7 @@ const typeDefs = gql`
         movie: [Movie]
         reviewText: String
         createdAt: String
-        score: Int
+        score: Float
         comments: [Comment]
     }
 
