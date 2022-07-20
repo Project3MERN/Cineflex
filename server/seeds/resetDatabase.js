@@ -6,11 +6,6 @@ db.once('open', async () => {
     await Movie.deleteMany({});
     await Review.deleteMany({});
 
-    const userData = [];
-
-    userData.push({ username: 'charanvir', email: 'charanvir@gmail.com', password: 'charanvir' })
-
-    const newUser = await User.collection.insertMany(userData)
 
 
 
@@ -22,7 +17,6 @@ db.once('open', async () => {
 
 
 
-
-    console.log("Data has been seeded")
+    console.log("Database has been reset")
     process.exit(0)
 })

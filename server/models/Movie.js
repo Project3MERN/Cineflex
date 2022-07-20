@@ -8,21 +8,6 @@ const movieSchema = new Schema(
             required: true,
             trim: true
         },
-        description: {
-            type: String,
-            required: true
-        },
-        cast: [
-            {
-                type: String,
-                required: true
-            }
-        ],
-        releaseYear: {
-            type: Number,
-            minLength: 9,
-            maxLength: 9
-        },
         reviews: [
             {
                 type: Schema.Types.ObjectId,

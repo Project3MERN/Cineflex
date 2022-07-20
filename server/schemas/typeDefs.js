@@ -14,13 +14,11 @@ const typeDefs = gql`
     type Movie {
         _id: ID
         name: String
-        description: String
-        cast: [String]
-        releaseYear: Int
         reviews: [Review]
     }
 
     type Review {
+        _id: ID
         movie: [Movie]
         reviewText: String
         createdAt: String
@@ -34,16 +32,20 @@ const typeDefs = gql`
     }
 
     type Query {
-        users: [User]
+        allUsers: [User]
         loggedInUser: User
         user(username: String!): User
-        movie: Movie
-        review: Review
+        allMovies: [Movie]
+        allReviews: [Review]
+        movie(name: String!): Movie
+        review(_id: ID!): Review
     }
 
     type Mutation {
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
+        addReview(movie: String!, reviewText: String!, score: String!): Review
+        addComment(reviewId: ID!, commentBody: String!): Review
     }
 `
 

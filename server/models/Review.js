@@ -21,8 +21,13 @@ const reviewSchema = new Schema(
         },
         score: {
             type: Number,
-            minLength: 0,
-            maxLength: 5
+            min: 0,
+            max: 5,
+            required: true
+        },
+        username: {
+            type: String,
+            required: true
         },
         comments: [commentSchema]
     },
