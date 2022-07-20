@@ -5,6 +5,7 @@ const NavBar = () => {
     return (
         <nav>
             <ul>
+                {/* pending <Link to = "{route}" components */}
                 <li>    
                     Home
                 </li>
