@@ -1,4 +1,4 @@
-const { User, Movie, Review, Comment } = require("../models");
+const { User, Movie, Review } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
 
@@ -9,12 +9,12 @@ const resolvers = {
         },
         loggedInUser: async (parent, args, context) => {
             if (context.user) {
-                const userData = await User.findOne({ _id: context.user._id })
+                const userData = await User.findOne({ _id: context.user._id }).populate('reviews')
                 return userData
             }
         },
         user: async (parent, { username }) => {
-            return User.findOne({ username })
+            return User.findOne({ username }).populate('reviews')
         },
         allMovies: async () => {
             const all = await Movie.find().populate('reviews')
