@@ -1,10 +1,11 @@
 import React from "react";
-import "../css/navBar.css";
+import classes from "../css/NavBar.module.css";
 
 const NavBar = () => {
     return (
         <nav>
-            <ul>
+            <ul className={classes.NavList}>
+                {/* pending <Link to = "{route}" components */}
                 <li>    
                     Home
                 </li>
