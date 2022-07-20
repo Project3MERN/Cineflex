@@ -23,7 +23,14 @@ const typeDefs = gql`
         reviewText: String
         createdAt: String
         score: Int
-        comments: String
+        comments: [Comment]
+    }
+
+    type Comment {
+        _id: ID
+        commentBody: String
+        createdAt: String
+        username: String
     }
 
     type Auth {

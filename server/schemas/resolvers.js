@@ -5,7 +5,7 @@ const { signToken } = require("../utils/auth");
 const resolvers = {
     Query: {
         allUsers: async () => {
-            return User.find()
+            return User.find().populate('reviews')
         },
         loggedInUser: async (parent, args, context) => {
             if (context.user) {
@@ -17,13 +17,14 @@ const resolvers = {
             return User.findOne({ username })
         },
         allMovies: async () => {
-            const all = await Movie.find();
+            const all = await Movie.find().populate('reviews')
             console.log(all)
             return all
         },
         allReviews: async () => {
             const all = Review.find()
                 .populate('movie')
+                .populate('comments')
             return all
         },
         movie: async (parent, { name }) => {
@@ -31,7 +32,7 @@ const resolvers = {
                 .populate('reviews')
         },
         review: async (parent, { _id }) => {
-            return Review.findOne({ _id })
+            return Review.findOne({ _id }).populate('movie').populate('comments')
         }
     },
     Mutation: {
@@ -56,8 +57,10 @@ const resolvers = {
             async function createReview(movie) {
                 const review = await Review.create({ username: context.user.username, reviewText: args.reviewText, score: args.score, movie: movie })
                 updateUser(review)
+                updateMovie(review, movie)
             }
             async function updateUser(review) {
+                console.log(review)
                 await User.findOneAndUpdate(
                     { _id: context.user._id },
                     { $push: { reviews: review._id } },
@@ -65,8 +68,15 @@ const resolvers = {
                 )
                 return review
             }
-            console.log(args)
-            console.log(args.movie)
+            // we also want to update the movie Model to include the newly created review, so it can be accessed for the individual Movie page
+            async function updateMovie(review, movie) {
+                await Movie.findOneAndUpdate(
+                    { _id: movie._id },
+                    { $push: { reviews: review._id } },
+                    { new: true }
+                )
+                return review
+            }
             if (context.user) {
                 const movie = await Movie.findOne({ name: args.movie })
                 if (!movie) {
@@ -75,10 +85,20 @@ const resolvers = {
                 } else {
                     createReview(movie)
                 }
-                console.log()
             } else {
                 throw new AuthenticationError("User must be logged in to leave a review")
             }
+        },
+        addComment: async (parent, { reviewId, commentBody }, context) => {
+            if (context.user) {
+                const addingComment = await Review.findOneAndUpdate(
+                    { _id: reviewId },
+                    { $push: { comments: { commentBody, username: context.user.username } } },
+                    { mew: true, runValidators: true }
+                )
+                return addingComment
+            }
+            throw new AuthenticationError("User must be logged in to leave comments!")
         }
     }
 }
