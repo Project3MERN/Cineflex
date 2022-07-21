@@ -94,7 +94,7 @@ const resolvers = {
                 const addingComment = await Review.findOneAndUpdate(
                     { _id: reviewId },
                     { $push: { comments: { commentBody, username: context.user.username } } },
-                    { mew: true, runValidators: true }
+                    { new: true, runValidators: true }
                 )
                 return addingComment
             }
@@ -123,7 +123,26 @@ const resolvers = {
                 }
             } else {
                 throw new AuthenticationError("User must be logged in to leave comments!")
-
+            }
+        },
+        removeComment: async (parent, { commentId, reviewId }, context) => {
+            console.log(commentId)
+            console.log(reviewId)
+            if (context.user) {
+                // const updatedReview = await Review.findOneAndUpdate(
+                //     { _id: reviewId },
+                //     { $pull: { comments: commentId } },
+                //     { new: true }
+                // )
+                const removingComment = await Review.findOneAndUpdate(
+                    { _id: reviewId },
+                    { $pull: { comments: { _id: commentId } } },
+                    { new: true, runValidators: true }
+                )
+                console.log(removingComment)
+                return removingComment
+            } else {
+                throw new AuthenticationError("User must be logged in to use this functionality")
             }
         }
     }

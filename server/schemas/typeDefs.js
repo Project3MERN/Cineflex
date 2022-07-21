@@ -55,7 +55,7 @@ const typeDefs = gql`
         addReview(movie: String!, reviewText: String!, score: String!): Review
         addComment(reviewId: ID!, commentBody: String!): Review
         removeReview(reviewId: ID!): User
-        removeComment(commentId: ID!): Review
+        removeComment(commentId: ID!, reviewId: ID!): Review
     }
 `
 
