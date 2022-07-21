@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 
-function CreatePost() {
+function CreatePost({ posts, setPosts }) {
+
+    const [title, setTitle] = useState('')
+    const [review, setReview] = useState('')
+    const [rating, setRating] = useState('')
+
+    function handleSubmit(e) {
+        e.preventDefault()
+        const post = {title, review, rating}
+        console.log(post);
+    }
+
     return (
         <div>
-            <div>
+            <form onSubmit={handleSubmit}>
                 <label
                     htmlFor='title'
                     >Title
@@ -11,15 +22,21 @@ function CreatePost() {
                 <input
                     type='text'
                     name='title'
-                    id='title' />
+                    id='title'
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                />
                 <label
                     htmlFor='review'
                     >Review
                 </label>
-                <input
+                <textarea
                     type='text'
                     name='review'
-                    id='review' />
+                    id='review'
+                    value={review}
+                    onChange={(e) => setReview(e.target.value)}
+                />
                 <label
                     htmlFor='rating'
                     >Rating
@@ -28,8 +45,15 @@ function CreatePost() {
                     type='number'
                     min='1'
                     name='rating'
-                    id='rating' />
-            </div>
+                    id='rating'
+                    value={rating}
+                    onChange={(e) => setRating(e.target.value)}
+                />
+                <button>
+                    Create Post
+                </button>
+            </form>
+            
         </div>
     )
 }

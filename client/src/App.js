@@ -4,18 +4,42 @@ import Header from "./components/Header";
 import ExplorePage from './pages/ExplorePage';
 import './css/app.css'
 import Dashboard from "./pages/Dashboard";
+import { v4 as uuidv4 } from 'uuid'
+import Post from "./components/Post";
+
+export const PostContext = React.createContext()
 
 // pending apollo client
 
 function App() {
 
-  const [posts, setPost] = useState(samplePost)
+  const [posts, setPosts] = useState(samplePost)
+
+  const postContextValue = {
+    setPosts,
+    posts
+  }
+
+  // function handlePostAdd(e) {
+  //   const newPost = {
+  //     id: uuidv4(),
+  //     title: '',
+  //     review: '',
+  //     rating: '',
+  //   }
+
+  //   setPost([...posts, newPost])
+  // }
 
   return (
-    <Router>  
+    <Router>
+      <PostContext.Provider value={postContextValue}>
         <Header />
         <ExplorePage posts={posts} />
-        <Dashboard />
+        <Dashboard 
+          posts={posts}
+          setPosts={setPosts} />
+      </PostContext.Provider>
     </Router>
   );
 }

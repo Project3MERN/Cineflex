@@ -1,11 +1,12 @@
 import React from 'react';
 import CreatePost from '../components/CreatePost';
 
-const Dashboard= () => {
+const Dashboard= ({ posts, setPosts }) => {
+    
     return (
         <div>
             <div>Creat a Post</div>
-            <CreatePost />
+            <CreatePost posts={posts} setPosts={setPosts} />
         </div>
     )
 }
