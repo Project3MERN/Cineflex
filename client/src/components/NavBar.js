@@ -4,16 +4,22 @@ import classes from "../css/navBar.css";
 const NavBar = () => {
     return (
         <nav>
-            <ul className={classes.NavList}>
+            <ul className="NavList">
                 {/* pending <Link to = "{route}" components */}
                 <li>    
-                    Home
+                    <a href="/">
+                        Home
+                    </a>
                 </li>
                 <li>
-                    Explore
+                    <a href="/explore">
+                        Explore
+                    </a>
                 </li>
                 <li>
-                    Login
+                    <a href="/login">
+                        Login
+                    </a>
                 </li>
             </ul>
         </nav>
