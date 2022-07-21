@@ -17,7 +17,9 @@ const NavBar = () => {
                     </a>
                 </li>
                 <li>
-                    Login
+                    <a href="/login">
+                        Login
+                    </a>
                 </li>
             </ul>
         </nav>

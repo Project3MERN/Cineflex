@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./components/Header";
 import Home from "./pages/Home.js"
 import ExplorePage from './pages/ExplorePage';
+import Login from "./pages/Login";
 import './css/app.css'
 import Dashboard from "./pages/Dashboard";
 
@@ -50,6 +51,10 @@ function App() {
                     <Dashboard />
                   </>
                 }
+              />
+              <Route
+                path = "/login"
+                element = {<Login />}
               />
             </Routes>
           </main>
