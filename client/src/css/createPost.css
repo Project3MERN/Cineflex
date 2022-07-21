@@ -6,7 +6,11 @@
     background-image: linear-gradient(
         rgba(255, 255, 255, 0.1),
         rgba(255, 255, 255, 0.1)),
+<<<<<<< HEAD
         url('../assets/images/cinema-director.jpg');
+=======
+        url('../assets/images/create-post.jpg');
+>>>>>>> 49ceec3edc58395b53b113df8a9c964976923d76
     background-size: cover;
     align-items: center;
 }
