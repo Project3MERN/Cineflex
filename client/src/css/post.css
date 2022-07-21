@@ -1,0 +1,14 @@
+.PostCard {
+    background-color: #1E1E1E;
+    color: white;
+    margin: 1% 2%;
+    border-radius: 10px;
+}
+
+.PostDetails {
+    padding: 1%;
+}
+
+.Rating {
+    color: #FFE066;
+}

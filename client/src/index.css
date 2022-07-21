@@ -20,3 +20,8 @@ header {
   display: flex;
   justify-content: space-between;
 }
+
+main {
+  margin: 0 auto;
+  width: 90%;
+}

@@ -4,7 +4,7 @@ import classes from "../css/navBar.css";
 const NavBar = () => {
     return (
         <nav>
-            <ul className={classes.NavList}>
+            <ul className="NavList">
                 {/* pending <Link to = "{route}" components */}
                 <li>    
                     Home
