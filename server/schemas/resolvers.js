@@ -99,6 +99,32 @@ const resolvers = {
                 return addingComment
             }
             throw new AuthenticationError("User must be logged in to leave comments!")
+        },
+        removeReview: async (parent, args, context) => {
+            if (context.user) {
+                const reviewData = await Review.findOne({ _id: args.reviewId })
+                if (reviewData) {
+                    await User.findOneAndUpdate(
+                        { _id: context.user._id },
+                        { $pull: { reviews: args.reviewId } },
+                        { new: true }
+                    )
+                    await Movie.findOneAndUpdate(
+                        { _id: reviewData.movie },
+                        { $pull: { reviews: args.reviewId } },
+                        { new: true }
+                    )
+                    await Review.findOneAndDelete(
+                        { _id: args.reviewId }
+                    )
+                    return "Review has been deleted"
+                } else {
+                    console.log("This review does not exist")
+                }
+            } else {
+                throw new AuthenticationError("User must be logged in to leave comments!")
+
+            }
         }
     }
 }

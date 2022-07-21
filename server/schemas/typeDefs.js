@@ -54,6 +54,8 @@ const typeDefs = gql`
         addUser(username: String!, email: String!, password: String!): Auth
         addReview(movie: String!, reviewText: String!, score: String!): Review
         addComment(reviewId: ID!, commentBody: String!): Review
+        removeReview(reviewId: ID!): User
+        removeComment(commentId: ID!): Review
     }
 `
 
