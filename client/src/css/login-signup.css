@@ -4,6 +4,17 @@
     align-items: center;
 }
 
+.login {
+    height: calc(100vh);
+    background-image: linear-gradient(
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.1)
+    ),
+        url('../assets/images/movies-background.jpg');
+    background-size: cover;
+
+}
+
 .UserFormWrapper p {
     padding-bottom: 1%;
 }
@@ -27,6 +38,10 @@ input {
     border: 1px solid #ccc;
     background: rgba(0,0,0,0);
     margin-bottom: 3%;
+}
+
+label {
+    color: white
 }
 
 button {

@@ -1,16 +1,29 @@
 import React, { useState } from "react";
 
-function CreatePost({ posts, setPosts }) {
+function CreatePost(props) {
+
+    const {
+        posts,
+        setPosts
+    } = props
+    
 
     const [title, setTitle] = useState('')
     const [review, setReview] = useState('')
     const [rating, setRating] = useState('')
 
     function handleSubmit(e) {
-        e.preventDefault()
-        const post = {title, review, rating}
-        console.log(post);
+        e.preventDefault();
+        if(title && review && rating) {
+            const newPost = {title, review, rating};
+            console.log(newPost);
+            setPosts(...posts, {newPost})
+        } else {
+            console.error(e);
+        }
     }
+
+    
 
     return (
         <div>
@@ -30,7 +43,7 @@ function CreatePost({ posts, setPosts }) {
                     htmlFor='review'
                     >Review
                 </label>
-                <textarea
+                <input
                     type='text'
                     name='review'
                     id='review'
@@ -53,6 +66,8 @@ function CreatePost({ posts, setPosts }) {
                     Create Post
                 </button>
             </form>
+
+            <div value={posts}></div>
             
         </div>
     )

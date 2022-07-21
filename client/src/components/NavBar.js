@@ -2,6 +2,9 @@ import React from "react";
 import classes from "../css/navBar.css";
 
 const NavBar = () => {
+
+    const user = true
+
     return (
         <nav>
             <ul className="NavList">
@@ -21,6 +24,11 @@ const NavBar = () => {
                         Login
                     </a>
                 </li>
+                {user && <li>
+                    <a href='/createPost'>
+                        Create
+                    </a>
+                </li>}
             </ul>
         </nav>
     )

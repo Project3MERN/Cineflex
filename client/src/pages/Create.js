@@ -1,13 +1,12 @@
 import React from 'react';
 import CreatePost from '../components/CreatePost';
 
-const Dashboard= (props) => {
-    
+function Create() {
     return (
         <div>
-            <div>My Posts</div>
+            <CreatePost />
         </div>
     )
 }
 
-export default Dashboard;
+export default Create;

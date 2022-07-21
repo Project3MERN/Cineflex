@@ -21,20 +21,24 @@ const Login = () => {
     }
 
     return (
-        <div className="UserFormWrapper"> 
-            <h2>Login</h2>
-            <p> Cineflex&trade; is excited to welcome you back! </p>
-            <form className="UserForm" onSubmit={handleFormSubmit}>
-                <div>
-                    <label htmlFor="email">Email:</label>
-                    <input name="email" type="email" id="email" value={formState.email} onChange={handleChange}/>
-                </div>
-                <div>
-                    <label htmlFor="password">Password:</label>
-                    <input name="password" type="password" id="password" value={formState.password} onChange={handleChange}/>
-                </div>
-                <button type="submit"> Login </button>
-            </form>
+        <div className="login">
+            <div className="UserFormWrapper"> 
+                <h2>Login</h2>
+                <p> Cineflex&trade; is excited to welcome you back! </p>
+                <form className="UserForm" onSubmit={handleFormSubmit}>
+                    <div>
+                        <label htmlFor="email">Email:</label>
+                        <input name="email" type="email" id="email" value={formState.email} onChange={handleChange}/>
+                    </div>
+                    <div>
+                        <label htmlFor="password">Password:</label>
+                        <input name="password" type="password" id="password" value={formState.password} onChange={handleChange}/>
+                    </div>
+                    <button type="submit"> Login </button>
+                    <button> Register </button>
+                </form>
+                    
+            </div>
         </div>
     )
 };

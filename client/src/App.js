@@ -8,6 +8,7 @@ import ExplorePage from './pages/ExplorePage';
 import Login from "./pages/Login";
 import './css/app.css'
 import Dashboard from "./pages/Dashboard";
+import Create from './pages/Create'
 
 export const PostContext = React.createContext()
 
@@ -33,7 +34,7 @@ const client = new ApolloClient({
 
 function App() {
 
-  const [posts, setPosts] = useState(samplePost)
+  const user = true
 
   return (
     <ApolloProvider client={client}>
@@ -49,7 +50,7 @@ function App() {
                 path="/explore"
                 element = {
                   <>
-                    <ExplorePage posts={posts} />
+                    <ExplorePage />
                     <Dashboard />
                   </>
                 }
@@ -58,28 +59,15 @@ function App() {
                 path = "/login"
                 element = {<Login />}
               />
+              {user && <Route
+                path = "/createPost"
+                element = {<Create />}
+              />}
             </Routes>
           </main>
       </Router>
     </ApolloProvider>
   );
 }
-
-const samplePost = [
-  {
-    id: 1,
-    title: 'Shrek the Third',
-    review: 'Shrek the Third is so good. Top 10 movie all time. Come on.',
-    rating: 5,
-    user: "joey"
-  },
-  {
-    id: 2,
-    title: 'Thor: Love and Thunder',
-    review: 'Damn good movie. Funny as they get.',
-    rating: 5,
-    user: "charanvir"
-  }
-]
 
 export default App;

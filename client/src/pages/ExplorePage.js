@@ -1,18 +1,14 @@
 import React from 'react';
-import Post from '../components/Post'
+import PostList from '../components/PostList'
 // import Comment from './Comment';
 
-function ExplorePage({ posts }) {
+function ExplorePage({ posts, setPosts }) {
 
     return(
         <div>
             <h2>Feed</h2>
             <div>
-                {posts.map(post => {
-                    return (
-                        <Post key={post.id} {...post} />
-                    )
-                })}
+                <PostList />
             </div>
         </div>
     )
