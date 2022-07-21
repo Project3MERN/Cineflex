@@ -8,8 +8,6 @@ import ExplorePage from './pages/ExplorePage';
 import Login from "./pages/Login";
 import './css/app.css'
 import Dashboard from "./pages/Dashboard";
-import { v4 as uuidv4 } from 'uuid'
-import Post from "./components/Post";
 
 export const PostContext = React.createContext()
 
@@ -37,34 +35,7 @@ function App() {
 
   const [posts, setPosts] = useState(samplePost)
 
-  const postContextValue = {
-    setPosts,
-    posts
-  }
-
-  // function handlePostAdd(e) {
-  //   const newPost = {
-  //     id: uuidv4(),
-  //     title: '',
-  //     review: '',
-  //     rating: '',
-  //   }
-
-  //   setPost([...posts, newPost])
-  // }
-
   return (
-<<<<<<< HEAD
-    <Router>
-      <PostContext.Provider value={postContextValue}>
-        <Header />
-        <ExplorePage posts={posts} />
-        <Dashboard 
-          posts={posts}
-          setPosts={setPosts} />
-      </PostContext.Provider>
-    </Router>
-=======
     <ApolloProvider client={client}>
       <Router>  
           <Header />
@@ -91,7 +62,6 @@ function App() {
           </main>
       </Router>
     </ApolloProvider>
->>>>>>> 1ac95e5a8ad64897bd1ca5c31eebdf6aa334f310
   );
 }
 
