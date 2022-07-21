@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from 'react-router-dom';
 import "../css/login-signup.css";
 
 const Login = () => {
@@ -35,7 +36,7 @@ const Login = () => {
                         <input className="login-input" name="password" type="password" id="password" value={formState.password} onChange={handleChange}/>
                     </div>
                     <button type="submit"> Login </button>
-                    <button> Register </button>
+                    <p>Not a user yet? Sign up <Link to="/signup">here</Link> instead!</p>
                 </form>
                     
             </div>
