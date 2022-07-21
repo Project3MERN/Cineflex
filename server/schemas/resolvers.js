@@ -129,11 +129,6 @@ const resolvers = {
             console.log(commentId)
             console.log(reviewId)
             if (context.user) {
-                // const updatedReview = await Review.findOneAndUpdate(
-                //     { _id: reviewId },
-                //     { $pull: { comments: commentId } },
-                //     { new: true }
-                // )
                 const removingComment = await Review.findOneAndUpdate(
                     { _id: reviewId },
                     { $pull: { comments: { _id: commentId } } },
