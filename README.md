@@ -19,10 +19,11 @@ You can clone the project from GitHub by copying either HTTPS or SSH link or by 
 ## Contribution
 
 Made by:
-Charanvir Singh
-Fares Akhtar
-Joe Chaaya
-Joey Cosentino
-Rajendra Patel
-Taimur Hasan
+Charanvir Singh  
+Fares Akhtar  
+Joe Chaaya  
+Joey Cosentino  
+Rajendra Patel  
+Taimur Hasan  
+
 
