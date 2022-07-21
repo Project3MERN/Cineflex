@@ -26,13 +26,17 @@ function CreatePost(props) {
     
 
     return (
-        <div>
-            <form onSubmit={handleSubmit}>
+        <div className="createPost-formWrapper">
+            <form
+                className="createPost-form" 
+                onSubmit={handleSubmit}>
                 <label
+                    className="createPost-label"
                     htmlFor='title'
                     >Title
                 </label>
                 <input
+                    className="createPost-input"
                     type='text'
                     name='title'
                     id='title'
@@ -40,10 +44,12 @@ function CreatePost(props) {
                     onChange={(e) => setTitle(e.target.value)}
                 />
                 <label
+                    className="createPost-label"
                     htmlFor='review'
                     >Review
                 </label>
                 <input
+                    className="createPost-input-review"
                     type='text'
                     name='review'
                     id='review'
@@ -51,10 +57,12 @@ function CreatePost(props) {
                     onChange={(e) => setReview(e.target.value)}
                 />
                 <label
+                    className="createPost-label"
                     htmlFor='rating'
                     >Rating
                 </label>
                 <input
+                    className="createPost-input"
                     type='number'
                     min='1'
                     name='rating'
@@ -62,7 +70,7 @@ function CreatePost(props) {
                     value={rating}
                     onChange={(e) => setRating(e.target.value)}
                 />
-                <button>
+                <button className="createPost-btn">
                     Create Post
                 </button>
             </form>

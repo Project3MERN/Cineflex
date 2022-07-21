@@ -12,7 +12,11 @@
     ),
         url('../assets/images/movies-background.jpg');
     background-size: cover;
+}
 
+.login-title,
+.login-p {
+    color: white;
 }
 
 .UserFormWrapper p {
@@ -30,7 +34,7 @@
     flex: 2 100%;
 }
 
-input {
+.login-input {
     padding: 2%;
     width: 100%;
     height: 40px;
@@ -38,9 +42,10 @@ input {
     border: 1px solid #ccc;
     background: rgba(0,0,0,0);
     margin-bottom: 3%;
+    background-color: white;
 }
 
-label {
+.login-label {
     color: white
 }
 

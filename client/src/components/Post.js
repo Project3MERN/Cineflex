@@ -2,13 +2,7 @@ import React from 'react';
 // import Comment from './Comment';
 import "../css/post.css"
 
-function Post(props) {
-    const {
-        title,
-        review,
-        rating,
-        user
-    } = props
+function Post() {
 
     return(
         <div className = "PostCard">
