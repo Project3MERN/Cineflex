@@ -19,7 +19,8 @@ function Post() {
 
     return(
         <>
-            <div className = "PostCard">
+            
+            <div className={editSelected ? 'modal-selected' : 'PostCard'}>
                 <div className='post-edit-delete-btn-wrapper'>
                     <button className='post-delete-btn'>Delete</button>
                     <button
@@ -27,8 +28,7 @@ function Post() {
                         onClick={handleEditSelected}
                     >   
                         Edit
-                    </button>
-                    {editSelected && <PostEdit handleEditClose={handleEditClose}/>}
+                    </button>                    
                 </div>
                 <div className = "PostDetails">
                     <h3>
@@ -46,6 +46,8 @@ function Post() {
                     <span></span>
                 </div>
             </div>
+            {editSelected && <PostEdit handleEditClose={handleEditClose}/>}
+            
 
             <Comment />
         </>
