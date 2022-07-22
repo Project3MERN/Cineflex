@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 
-function CreatePost(props) {
-
-    const {
-        posts,
-        setPosts
-    } = props
+function CreatePost() {
     
 
     const [title, setTitle] = useState('')
@@ -17,13 +12,10 @@ function CreatePost(props) {
         if(title && review && rating) {
             const newPost = {title, review, rating};
             console.log(newPost);
-            setPosts(...posts, {newPost})
         } else {
             console.error(e);
         }
-    }
-
-    
+    }    
 
     return (
         <div className="createPost-formWrapper">
@@ -74,8 +66,6 @@ function CreatePost(props) {
                     Create Post
                 </button>
             </form>
-
-            <div value={posts}></div>
             
         </div>
     )

@@ -1,0 +1,11 @@
+.comment-formWrapper {
+    justify-content: center;
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+}
+
+.comment-form {
+    width: 50%;
+
+}
