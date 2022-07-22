@@ -12,3 +12,30 @@
 .Rating {
     color: #FFE066;
 }
+
+.post-edit-delete-btn-wrapper {
+    display: flex;
+    margin: 10px;
+    padding-top: 10px;
+    flex-direction: row-reverse;
+}
+
+.post-edit-btn {
+    margin-right: 5px;
+    background-color: green;
+    cursor: pointer;
+}
+
+.post-delete-btn {
+    background-color: darkred;
+    cursor: pointer;
+}
+
+.post-edit-btn,
+.post-delete-btn {
+    color: white;
+    padding: 4px 10px;
+    border: none;
+    border-radius: 10px;
+    font-weight: bolder;
+}
