@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 import "../css/login-signup.css";
+import { useMutation } from "@apollo/client";
+import { LOGIN_USER } from "../utils/mutations";
+import Auth from '../utils/auth';
 
 const Login = () => {
     const [ formState, setFormState ] = useState({ email: '', password: '' });
+    const [ login, {error}] = useMutation(LOGIN_USER);
 
     // update state based on form input changes
     const handleChange = (event) => {
@@ -18,7 +22,23 @@ const Login = () => {
     const handleFormSubmit = async (event) => {
         event.preventDefault();
 
-        console.log(formState);
+        try {
+            const { data } = await login({
+                variables: {
+                    ...formState
+                }
+            })
+
+            Auth.login(data.login.token);
+        } catch(e) {
+            console.error(e);
+        }
+
+        // clear form values
+        setFormState({
+            email: '',
+            password: '',
+        });
     }
 
     return (
@@ -38,7 +58,7 @@ const Login = () => {
                     <button type="submit"> Login </button>
                     <p>Not a user yet? Sign up <Link to="/signup">here</Link> instead!</p>
                 </form>
-                    
+                {error && <div>Something went wrong! Please try again.</div>}    
             </div>
         </div>
     )
