@@ -32,6 +32,13 @@ const Signup = () => {
         } catch (e) {
             console.error(e)
         }
+
+        // clear form values
+        setFormState({
+            email: '',
+            password: '',
+            username: ''
+        });
     }
 
     return (
