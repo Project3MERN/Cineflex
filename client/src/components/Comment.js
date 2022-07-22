@@ -9,6 +9,7 @@ function Comment() {
         if(comment) {
             const newComment = {comment};
             console.log(newComment);
+            setComment('')
         } else {
             console.error(e)
         }
