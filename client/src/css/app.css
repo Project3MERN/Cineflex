@@ -1,4 +1,3 @@
-@import-normalize;
 @import './comment.css';
 @import './dashboard.css';
 @import './explorePage.css';
@@ -6,4 +5,4 @@
 @import './navBar.css';
 @import './post.css';
 @import './postList.css';
-@import './createPost.css'
+@import './createPost.css';

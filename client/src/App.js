@@ -6,6 +6,7 @@ import Header from "./components/Header";
 import Home from "./pages/Home.js"
 import ExplorePage from './pages/ExplorePage';
 import Login from "./pages/Login";
+import Signup from './pages/Signup';
 import './css/app.css'
 import Dashboard from "./pages/Dashboard";
 import Create from './pages/Create'
@@ -58,6 +59,10 @@ function App() {
               <Route
                 path = "/login"
                 element = {<Login />}
+              />
+              <Route
+                path = "/signup"
+                element = {<Signup />}
               />
               {user && <Route
                 path = "/createPost"
