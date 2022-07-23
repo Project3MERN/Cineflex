@@ -25,6 +25,7 @@ const typeDefs = gql`
         createdAt: String
         score: Float
         comments: [Comment]
+        username: String
     }
 
     type Comment {
