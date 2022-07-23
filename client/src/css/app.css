@@ -5,4 +5,5 @@
 @import './navBar.css';
 @import './post.css';
 @import './postList.css';
-@import './createPost.css'
+@import './createPost.css';
+@import './postEdit.css'

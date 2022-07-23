@@ -26,10 +26,11 @@ function Comment() {
                     htmlFor='comment'
                     >username
                 </label>
-                <input 
+                <textarea 
                     className='comment-input'
                     type='text'
                     name='comment'
+                    rows='4'
                     value={comment}
                     onChange={(e) => setComment(e.target.value)}
                 />
