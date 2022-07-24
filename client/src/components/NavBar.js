@@ -1,34 +1,48 @@
 import React from "react";
-import classes from "../css/navBar.css";
+import "../css/navBar.css";
+import Auth from '../utils/auth';
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
 
-    const user = true
+    const logout = event => {
+        event.preventDefault();
+        Auth.logout();
+    }
 
     return (
         <nav>
             <ul className="NavList">
                 {/* pending <Link to = "{route}" components */}
                 <li>    
-                    <a href="/">
+                    <Link to="/">
                         Home
-                    </a>
+                    </Link>
                 </li>
                 <li>
-                    <a href="/explore">
+                    <Link to="/explore">
                         Explore
-                    </a>
+                    </Link>
                 </li>
-                <li>
-                    <a href="/login">
-                        Login
-                    </a>
-                </li>
-                {user && <li>
-                    <a href='/createPost'>
-                        Create
-                    </a>
-                </li>}
+                {Auth.loggedIn() ? (
+                    <>
+                        <Link to="/createPost">
+                            Create
+                        </Link>
+                        <a href="/" onClick={logout}>
+                            Logout
+                        </a>
+                    </>
+                ) : (
+                    <>
+                        <li>
+                            <Link to="/login">
+                                Login
+                            </Link>
+                        </li>
+                    </>
+                )}
+                
             </ul>
         </nav>
     )

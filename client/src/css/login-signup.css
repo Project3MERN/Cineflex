@@ -34,6 +34,18 @@
     flex: 2 100%;
 }
 
+.UserForm p {
+    color: white;
+}
+
+.UserForm p a {
+    color: #ccc;
+}
+
+.UserForm p a:hover {
+    color: #FFE066;
+}
+
 .login-input {
     padding: 2%;
     width: 100%;
@@ -49,7 +61,7 @@
     color: white
 }
 
-button {
+.login-btn {
     background-color: #FFE066;
     border: 0;
     width: 100%;
