@@ -1,7 +1,7 @@
-import React from "react";
 import Post from "../components/Post";
 import React, { useState } from "react";
 import "../css/home.css";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
   return (

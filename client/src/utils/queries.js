@@ -42,7 +42,6 @@ export const GET_ALLUSERS = gql`
           reviews
           averageScore
       }
-      }
     }
   }
 `;
@@ -59,15 +58,14 @@ export const GET_ALLMOVIES = gql`
 `;
 
 export const GET_ALLREVIEWS = gql`
-  {
+  query reviews {
     allReviews {
-      _id
+        _id
         movie{
           _id
           name
-          reviews
-          averageScore
         }
+        username
         reviewText
         createdAt
         score
@@ -76,6 +74,7 @@ export const GET_ALLREVIEWS = gql`
           commentBody
           createdAt
           username
+        }
     }
   }
 `;
