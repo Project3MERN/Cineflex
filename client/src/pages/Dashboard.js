@@ -1,4 +1,5 @@
 import React from "react";
+import "../css/dashboard.css";
 import CreatePost from "../components/CreatePost";
 
 const Dashboard = (props) => {
