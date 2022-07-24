@@ -1,6 +1,6 @@
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
-import React, { useState } from "react";
+import React from "react";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from "./components/Header";
 import Home from "./pages/Home.js"
@@ -8,7 +8,7 @@ import ExplorePage from './pages/ExplorePage';
 import Login from "./pages/Login";
 import Signup from './pages/Signup';
 import './css/app.css'
-import Dashboard from "./pages/Dashboard";
+// import Dashboard from "./pages/Dashboard";
 import Create from './pages/Create'
 
 export const PostContext = React.createContext()
@@ -52,7 +52,7 @@ function App() {
                 element = {
                   <>
                     <ExplorePage />
-                    <Dashboard />
+                    {/* <Dashboard /> */}
                   </>
                 }
               />

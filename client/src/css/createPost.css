@@ -9,6 +9,7 @@
         url('../assets/images/create-post.jpg');
     background-size: cover;
     align-items: center;
+    color: white;
 }
 
 .createPost-form {
