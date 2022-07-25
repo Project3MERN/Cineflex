@@ -121,7 +121,7 @@ export const SINGLE_USER = gql`
       _id
       username
       email
-      reviews: {
+      reviews {
         _id
         movie{
           name
