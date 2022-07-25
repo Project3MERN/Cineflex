@@ -116,4 +116,17 @@ export const REMOVE_REVIEW = gql`
   }
 `;
 
-
+export const REMOVE_COMMENT = gql`
+  mutation removeComment($commentId: ID!, $reviewId: ID!) {
+    removeComment(commentId: $commentId, reviewId: $reviewId) {
+      _id
+      movie {
+        name
+      }
+      reviewText
+      createdAt
+      score
+      username
+    }
+  }
+`

@@ -135,5 +135,20 @@ export const SINGLE_USER = gql`
 `
 
 export const LOGGED_IN_USER = gql`
-  
+  {
+    loggedInUser{
+      _id
+      username
+      email
+      reviews{
+        _id
+        movie{
+          name
+        }
+        reviewText
+        createdAt
+        Score
+      }
+    }
+  }
 `
