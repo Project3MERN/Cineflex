@@ -59,7 +59,7 @@ const Signup = () => {
                         <label className="login-label" htmlFor="password">Password:</label>
                         <input className="login-input" name="password" type="password" id="password" value={formState.password} onChange={handleChange}/>
                     </div>
-                    <button type="submit"> Sign Up </button>
+                    <button className="login-btn" type="submit"> Sign Up </button>
                     <p>Already a user? Login <Link to="/login"><span>here</span></Link> instead!</p>
                 </form>
                 {error && <div>Something went wrong! Please try again.</div>}

@@ -5,6 +5,7 @@ import Post from "../components/Post";
 import { useQuery, gql } from '@apollo/client';
 import { GET_ALLREVIEWS } from '../utils/queries';
 import "../css/home.css";
+import { Link } from 'react-router-dom';
 
 const Home = () => {
 

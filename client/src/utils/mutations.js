@@ -65,7 +65,7 @@ export const ADD_COMMENT = gql`
           commentBody
           createdAt
           username
-      }
+        }
     }
   }
 `;
@@ -119,22 +119,14 @@ export const REMOVE_REVIEW = gql`
 export const REMOVE_COMMENT = gql`
   mutation removeComment($commentId: ID!, $reviewId: ID!) {
     removeComment(commentId: $commentId, reviewId: $reviewId) {
-        _id
-        movie{
-          _id
-          name
-          reviews
-          averageScore
-        }
-        reviewText
-        createdAt
-        score
-        comments{
-          _id
-          commentBody
-          createdAt
-          username
+      _id
+      movie {
+        name
       }
+      reviewText
+      createdAt
+      score
+      username
     }
   }
-`;
+`
