@@ -40,7 +40,7 @@ function CreatePost() {
                     htmlFor='review'
                     >Review
                 </label>
-                <input
+                <textarea
                     className="createPost-input-review"
                     type='text'
                     name='review'
@@ -57,6 +57,7 @@ function CreatePost() {
                     className="createPost-input"
                     type='number'
                     min='1'
+                    max='5'
                     name='rating'
                     id='rating'
                     value={rating}
