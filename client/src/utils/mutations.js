@@ -1,10 +1,13 @@
 import { gql } from '@apollo/client';
 
 export const LOGIN_USER = gql`
-  mutation login($email: String!, $password: String!) {
-    login(email: $email, password: $password) {
+  mutation login($email: String!, $password: String!) 
+  {
+    login(email: $email, password: $password) 
+    {
       token
-      user {
+      user 
+      {
         _id
         username
       }
@@ -13,10 +16,13 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_USER = gql`
-  mutation addUser($username: String!, $email: String!, $password: String!) {
-    addUser(username: $username, email: $email, password: $password) {
+  mutation addUser($username: String!, $email: String!, $password: String!) 
+  {
+    addUser(username: $username, email: $email, password: $password) 
+    {
       token
-      user {
+      user 
+      {
         _id
         username
       }
@@ -25,10 +31,13 @@ export const ADD_USER = gql`
 `;
 
 export const ADD_REVIEW = gql`
-  mutation addReview($movie: String!, $reviewText: String!, $score: String!) {
-    addReview(movie: $movie, reviewText: $reviewText, $score: $score) {
+  mutation addReview($movie: String!, $reviewText: String!, $score: String!) 
+  {
+    addReview(movie: $movie, reviewText: $reviewText, $score: $score) 
+    {
         _id
-        movie{
+        movie
+        {
           _id
           name
           reviews
@@ -37,7 +46,8 @@ export const ADD_REVIEW = gql`
         reviewText
         createdAt
         score
-        comments{
+        comments
+        {
           _id
           commentBody
           createdAt
@@ -48,10 +58,13 @@ export const ADD_REVIEW = gql`
 `;
 
 export const ADD_COMMENT = gql`
-  mutation addComment($reviewId: ID!, $commentBody: String!) {
-    addComment(reviewId: $reviewId, commentBody: $commentBody) {
+  mutation addComment($reviewId: ID!, $commentBody: String!) 
+  {
+    addComment(reviewId: $reviewId, commentBody: $commentBody) 
+    {
         _id
-        movie{
+        movie
+        {
           _id
           name
           reviews
@@ -60,24 +73,30 @@ export const ADD_COMMENT = gql`
         reviewText
         createdAt
         score
-        comments{
+        comments
+        {
           _id
           commentBody
           createdAt
           username
-    }
+        }
+    }   
   }
 `;
 
 export const REMOVE_REVIEW = gql`
-  mutation removeReview($reviewId: ID!) {
-    removeReview(reviewId: $reviewId) {
+  mutation removeReview($reviewId: ID!) 
+  {
+    removeReview(reviewId: $reviewId) 
+    {
       _id
       username
       email
-      reviews{
+      reviews
+      {
         _id
-        movie{
+        movie
+        {
           _id
           name
           reviews
@@ -86,26 +105,30 @@ export const REMOVE_REVIEW = gql`
         reviewText
         createdAt
         score
-        comments{
+        comments
+        {
           _id
           commentBody
           createdAt
           username
         }
       }
-      favorites{
+      favorites
+      {
          _id
           name
           reviews
           averageScore
       }
-      watchedList{
+      watchedList
+      {
           _id
           name
           reviews
           averageScore
       }
-      wishList{
+      wishList
+      {
           _id
           name
           reviews
@@ -116,10 +139,13 @@ export const REMOVE_REVIEW = gql`
 `;
 
 export const REMOVE_COMMENT = gql`
-  mutation removeComment($commentId: ID!, $reviewId: ID!) {
-    removeComment(commentId: $commentId, reviewId: $reviewId) {
+  mutation removeComment($commentId: ID!, $reviewId: ID!) 
+  {
+    removeComment(commentId: $commentId, reviewId: $reviewId) 
+    {
         _id
-        movie{
+        movie
+        {
           _id
           name
           reviews
@@ -128,11 +154,13 @@ export const REMOVE_COMMENT = gql`
         reviewText
         createdAt
         score
-        comments{
+        comments
+        {
           _id
           commentBody
           createdAt
           username
-    }
+        }
+    }   
   }
 `;

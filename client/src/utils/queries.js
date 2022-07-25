@@ -2,13 +2,16 @@ import { gql } from '@apollo/client';
 
 export const GET_ALLUSERS = gql`
   {
-    allusers {
+    allusers 
+    {
       _id
       username
       email
-      reviews{
+      reviews
+      {
         _id
-        movie{
+        movie
+        {
           _id
           name
           reviews
@@ -17,31 +20,34 @@ export const GET_ALLUSERS = gql`
         reviewText
         createdAt
         score
-        comments{
+        comments
+        {
           _id
           commentBody
           createdAt
           username
         }
       }
-      favorites{
+      favorites
+      {
          _id
           name
           reviews
           averageScore
       }
-      watchedList{
+      watchedList
+      {
           _id
           name
           reviews
           averageScore
       }
-      wishList{
+      wishList
+      {
           _id
           name
           reviews
           averageScore
-      }
       }
     }
   }
@@ -49,7 +55,8 @@ export const GET_ALLUSERS = gql`
 
 export const GET_ALLMOVIES = gql`
   {
-    allMovies {
+    allMovies 
+    {
       _id
       name
       reviews
@@ -60,9 +67,11 @@ export const GET_ALLMOVIES = gql`
 
 export const GET_ALLREVIEWS = gql`
   {
-    allReviews {
+    allReviews 
+    {
       _id
-        movie{
+        movie
+        {
           _id
           name
           reviews
@@ -71,11 +80,13 @@ export const GET_ALLREVIEWS = gql`
         reviewText
         createdAt
         score
-        comments{
+        comments
+        {
           _id
           commentBody
           createdAt
           username
+        }
     }
   }
 `;
