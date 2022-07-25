@@ -1,5 +1,5 @@
 import React from 'react';
-import Post from '../components/Post'
+import PostList from '../components/PostList'
 // import Comment from './Comment';
 
 function ExplorePage({ posts, setPosts }) {
@@ -8,11 +8,7 @@ function ExplorePage({ posts, setPosts }) {
         <div>
             <h2>Feed</h2>
             <div>
-                <Post />
-                <Post />
-                <Post />
-                <Post />
-                <Post />
+                <PostList />
             </div>
         </div>
     )
