@@ -5,7 +5,7 @@ import "../css/post.css"
 import Comment from './Comment';
 import PostEdit from './PostEdit';
 
-function Post() {
+function Post({ review: {_id, movie, reviewText, createdAt, score, comments}}) {
 
     const [editSelected, setEditSelected] = useState(false)
 
@@ -33,7 +33,7 @@ function Post() {
                 <div className = "PostDetails">
                     <h3>
                         {/* <Link to={`/post/${post._id}`}> */}
-                        Test Title
+                        {movie}
                         {/* </Link> */}
                     </h3>
                     <p>
@@ -41,15 +41,15 @@ function Post() {
                         test user
                         {/* </Link> */}
                     </p>
-                    <p className = "Rating">5</p>
-                    <p>lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum</p>
-                    <span></span>
+                    <p className = "Rating">{score}</p>
+                    <p>{reviewText}</p>
+                    <div>{createdAt}</div>
                 </div>
             </div>
             {editSelected && <PostEdit handleEditClose={handleEditClose}/>}
             
 
-            <Comment />
+            <Comment comments={comments} />
         </>
     )
 }

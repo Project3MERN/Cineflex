@@ -26,7 +26,7 @@ export const ADD_USER = gql`
 
 export const ADD_REVIEW = gql`
   mutation addReview($movie: String!, $reviewText: String!, $score: String!) {
-    addReview(movie: $movie, reviewText: $reviewText, $score: $score) {
+    addReview(movie: $movie, reviewText: $reviewText, score: $score) {
         _id
         movie{
           _id
@@ -65,6 +65,7 @@ export const ADD_COMMENT = gql`
           commentBody
           createdAt
           username
+      }
     }
   }
 `;
@@ -133,6 +134,7 @@ export const REMOVE_COMMENT = gql`
           commentBody
           createdAt
           username
+      }
     }
   }
 `;

@@ -14,7 +14,7 @@ import Create from './pages/Create'
 export const PostContext = React.createContext()
 
 const httpLink = createHttpLink({
-  uri: '/graphql',
+  uri: '/graphql'
 });
 
 // adding headers to context to be able to use tokens
