@@ -1,8 +1,7 @@
-import React, { useEffect } from "react";
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
 import Post from "../components/Post";
 
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { GET_ALLREVIEWS } from '../utils/queries';
 import "../css/home.css";
 import { Link } from 'react-router-dom';
@@ -10,12 +9,16 @@ import { Link } from 'react-router-dom';
 const Home = () => {
 
   const { loading, data} = useQuery(GET_ALLREVIEWS)
+  const reviews = data?.allReviews || [];
+  console.log(reviews);
+  // const [reviews, setReviews] = useState([])
   
-  useEffect(() => {
-    if(data) {
-      console.log(data);
-    }
-  }, [data])
+  // useEffect(() => {
+  //   if(data) {
+  //     setReviews(data.allReviews)
+  //   }
+  // }, [data])
+  // console.log(reviews);
 
   return (
     <div className="home">
@@ -30,15 +33,20 @@ const Home = () => {
       <div className="trending">
         <h2>Trending Movies</h2>
 
-        {/* {loading ? (
-          <h1>Loading Posts...</h1>
-        ): (
-          reviews && reviews.map(review => (
+        <div>
+          {/* {reviews.map(review => {
+            return (
             <div key={review._id}>
-              <Post review={review} />
+              <Post review={{review}} />
             </div>
-          ))
-        )} */}
+            )
+          })} */}
+          {loading ? (
+            <div>Loading...</div>
+          ) : (
+            <Post reviews={reviews} />
+          )}
+        </div>
         
         <button className="card_btn">
           <Link to="/login">Sign In To View</Link>
