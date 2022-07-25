@@ -78,3 +78,77 @@ export const GET_ALLREVIEWS = gql`
     }
   }
 `;
+
+export const SINGLE_MOVIE = gql`
+  query movie($name: String!) {
+    movie(name: $name) {
+      _id
+      name
+      reviews {
+        movie
+        reviewText
+        score
+        username
+      }
+      averageScore
+    }
+  }
+`
+
+export const SINGLE_REVIEW = gql`
+  query review($id: ID!) {
+    review(_id: $id) {
+      _id
+      movie{
+        name
+        averageScore
+      }
+      reviewText
+      createdAt
+      score
+      comments{
+        commentBody
+        username
+        createdAt
+      }
+    }
+  }
+`
+
+export const SINGLE_USER = gql`
+  query user($username: String!){
+    user(username: $username){
+      _id
+      username
+      email
+      reviews {
+        _id
+        movie{
+          name
+        }
+        reviewText
+        score
+        createdAt
+      }
+    }
+  }
+`
+
+export const LOGGED_IN_USER = gql`
+  {
+    loggedInUser{
+      _id
+      username
+      email
+      reviews{
+        _id
+        movie{
+          name
+        }
+        reviewText
+        createdAt
+        Score
+      }
+    }
+  }
+`

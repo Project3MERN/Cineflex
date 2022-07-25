@@ -5,7 +5,7 @@ import "../css/post.css"
 import Comment from './Comment';
 import PostEdit from './PostEdit';
 
-function Post() {
+function Post({ review }) {
 
     const [editSelected, setEditSelected] = useState(false)
 
@@ -18,39 +18,40 @@ function Post() {
     }
 
     return(
-        <>
+        <div>
+                            <p>
+                                {review.username}
+                            </p>
+
+                    <div key={review._id}>
+                        <div className={editSelected ? 'modal-selected' : 'PostCard'}>
+                            <div className='post-edit-delete-btn-wrapper'>
+                                <button className='post-delete-btn'>Delete</button>
+                                <button
+                                    className='post-edit-btn'
+                                    onClick={handleEditSelected}
+                                >   
+                                    Edit
+                                </button>                    
+                            </div>
+                            <div className = "PostDetails">
+                            <h3>
+                                {review.movie[0].name}
+                            </h3>
+                            
+                            <p className = "Rating">{review.score}</p>
+                            <p>{review.reviewText}</p>
+                            <div>{review.createdAt}</div>
+                        </div>
+                    </div>
+                        {editSelected && <PostEdit handleEditClose={handleEditClose}/>}
+                        <Comment comments={review.comments} />
+                   </div>
             
-            <div className={editSelected ? 'modal-selected' : 'PostCard'}>
-                <div className='post-edit-delete-btn-wrapper'>
-                    <button className='post-delete-btn'>Delete</button>
-                    <button
-                        className='post-edit-btn'
-                        onClick={handleEditSelected}
-                    >   
-                        Edit
-                    </button>                    
-                </div>
-                <div className = "PostDetails">
-                    <h3>
-                        {/* <Link to={`/post/${post._id}`}> */}
-                        Test Title
-                        {/* </Link> */}
-                    </h3>
-                    <p>
-                        {/* <Link to={`user/${post.username}`}> */}
-                        test user
-                        {/* </Link> */}
-                    </p>
-                    <p className = "Rating">5</p>
-                    <p>lorem ipsum lorem ipsumlorem ipsumlorem ipsumlorem ipsumlorem ipsum</p>
-                    <span></span>
-                </div>
-            </div>
-            {editSelected && <PostEdit handleEditClose={handleEditClose}/>}
             
 
-            <Comment />
-        </>
+            
+        </div>
     )
 }
 
