@@ -34,19 +34,19 @@ const Home = () => {
         <h2>Trending Movies</h2>
 
         <div>
-          {/* {reviews.map(review => {
+          {reviews.map(review => {
             return (
             <div key={review._id}>
-              <Post review={{review}} />
+              <Post review={review} />
             </div>
             )
-          })} */}
-          {loading ? (
+          })}
+          {/* {loading ? (
             <div>Loading...</div>
           ) : (
             <Post reviews={reviews} />
-          )}
-        </div>
+          )} */}
+         </div>
         
         <button className="card_btn">
           <Link to="/login">Sign In To View</Link>

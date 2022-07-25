@@ -5,7 +5,7 @@ import "../css/post.css"
 import Comment from './Comment';
 import PostEdit from './PostEdit';
 
-function Post({ reviews }) {
+function Post({ review }) {
 
     const [editSelected, setEditSelected] = useState(false)
 
@@ -19,9 +19,10 @@ function Post({ reviews }) {
 
     return(
         <div>
-            <h3>Reviews</h3>
-            {reviews && 
-                reviews.map(review => (
+                            <p>
+                                {review.username}
+                            </p>
+
                     <div key={review._id}>
                         <div className={editSelected ? 'modal-selected' : 'PostCard'}>
                             <div className='post-edit-delete-btn-wrapper'>
@@ -35,11 +36,9 @@ function Post({ reviews }) {
                             </div>
                             <div className = "PostDetails">
                             <h3>
-                                {review.movie}
+                                {review.movie[0].name}
                             </h3>
-                            <p>
-                                {review.username}
-                            </p>
+                            
                             <p className = "Rating">{review.score}</p>
                             <p>{review.reviewText}</p>
                             <div>{review.createdAt}</div>
@@ -48,7 +47,6 @@ function Post({ reviews }) {
                         {editSelected && <PostEdit handleEditClose={handleEditClose}/>}
                         <Comment comments={review.comments} />
                    </div>
-                ))}
             
             
 
