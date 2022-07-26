@@ -1,20 +1,37 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { GET_ALLMOVIES, SINGLE_MOVIE } from '../utils/queries';
+import { GET_ALLREVIEWS, SINGLE_MOVIE } from '../utils/queries';
 import "../css/createPost.css";
 import { ADD_REVIEW } from '../utils/mutations';
+import { useParams } from 'react-router-dom';
 
-const ReviewInMovie = ({ movieName, movieId }) => {
+const ReviewInMovie = ({ movieName }) => {
+    const { id: movieId } = useParams();
     const [reviewText, setReviewText] = useState("")
     const [score, setScore] = useState('')
-    const id = movieId
+
     const [addReview, { error }] = useMutation(ADD_REVIEW, {
         update(cache, { data: { addReview } }) {
             try {
-                const { allMovies } = cache.readQuery({ query: SINGLE_MOVIE, variables: { id } })
-                console.log(allMovies)
-            } catch (e) {
-                console.warn(e)
+                const movieData = cache.readQuery({ query: SINGLE_MOVIE, variables: { id: movieId } });
+                const allReviews = cache.readQuery({ query: GET_ALLREVIEWS })
+                console.log(allReviews)
+                console.log(movieData)
+                cache.writeQuery({
+                    query: SINGLE_MOVIE,
+                    data: { movie: { ...movieData, _id: movieId, name: movieName, reviews: addReview } }
+                })
+                cache.writeQuery({
+                    query: GET_ALLREVIEWS,
+                    data: {
+                        allReviews: {
+                            ...allReviews,
+                            addReview
+                        }
+                    }
+                })
+            } catch (err) {
+                console.log(err)
             }
         }
     })

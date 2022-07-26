@@ -18,7 +18,6 @@ const resolvers = {
         },
         allMovies: async () => {
             const all = await Movie.find().populate('reviews')
-            console.log(all)
             return all
         },
         allReviews: async () => {
@@ -30,10 +29,10 @@ const resolvers = {
         },
         movie: async (parent, { _id }) => {
             return Movie.findOne({ _id })
-                .populate('reviews')
+                .populate('reviews').sort({ createdAt: -1 })
         },
         review: async (parent, { _id }) => {
-            return Review.findOne({ _id }).populate('movie').populate('comments')
+            return Review.findOne({ _id }).populate('movie').populate('comments').sort({ createdAt: -1 })
         }
     },
     Mutation: {

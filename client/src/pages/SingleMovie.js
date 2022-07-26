@@ -12,6 +12,7 @@ const SingleMovie = () => {
         variables: { id: movieId }
     })
     const movies = data?.movie || {}
+
     if (loading) {
         return (
             <div>Loading...</div>
@@ -24,7 +25,7 @@ const SingleMovie = () => {
                 <h1>{movies.name}</h1>
                 {loggedIn && <>
                     <h2>Write a Review</h2>
-                    <ReviewInMovie movieName={movies.name} movieId={movieId}></ReviewInMovie>
+                    <ReviewInMovie movieName={movies.name}></ReviewInMovie>
                 </>}
                 <h2>Reviews:</h2>
                 {movies.reviews.map(review => {
