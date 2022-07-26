@@ -20,3 +20,23 @@ nav ul li{
 a {
     text-decoration: none;
 }
+
+@media all and (max-width: 1200px ){
+  .nav ul{
+  width:100%
+  }}
+
+@media all and (max-width: 992px ){
+    .nav ul{
+    width:80%
+    }}  
+
+@media all and (max-width: 768px ){
+    .nav ul{
+    width:60%
+    }}
+
+@media all and (max-width: 600px ){
+    .nav ul{
+    width:50%
+    }}

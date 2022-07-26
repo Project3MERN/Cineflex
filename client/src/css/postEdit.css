@@ -47,5 +47,37 @@
     font-weight: 700;
 }
 
+@media all and (max-width: 1200px ){
+    .edit-form-wrapper{
+    width:50%
+    }
+    .postEdit-btn{
+    width: 7%
+    }}
+
+@media all and (max-width: 992px ){
+    .edit-form-wrapper{
+    width:40%
+    }
+    .postEdit-btn{
+     width: 6%
+     }}
+
+@media all and (max-width: 768px ){
+    .edit-form-wrapper{
+    width:30%
+     }
+    .postEdit-btn{
+    width: 5%
+     }} 
+     
+@media all and (max-width: 600px ){
+    .edit-form-wrapper{
+    width:20%
+    }
+    .postEdit-btn{
+    width: 4%
+    }}
+
 
 
