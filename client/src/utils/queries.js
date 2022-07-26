@@ -94,6 +94,7 @@ export const SINGLE_MOVIE = gql`
         reviewText
         score
         username
+        _id
       }
     }
   }

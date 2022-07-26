@@ -9,7 +9,6 @@ const Movie = () => {
     if (loading) {
         return <h2>Loading...</h2>
     }
-    console.log(movies)
     return (
         <div>
             <h1>Movies</h1>
