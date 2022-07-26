@@ -74,3 +74,38 @@
     min-height: 40px;
     margin-top: 1%;
 }
+
+@media all and (max-width: 1200px ){
+    .login-input{
+    width: 100%
+  }
+    .login-btn{
+    width: 100%    
+  }}
+
+@media all and (max-width: 992px ){
+    .login-input{
+    width: 80%
+  }
+    .login-btn{
+    width: 80%    
+  }}
+
+@media all and (max-width: 768px ){
+    .login-input{
+    width: 60%
+  }
+    .login-btn{
+    width: 60%    
+  }}  
+
+@media all and (max-width: 600px ){
+    .login-input{
+    width: 50%
+  }
+    .login-btn{
+    width: 50%    
+  }}
+  
+ 
+  

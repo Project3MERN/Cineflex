@@ -50,3 +50,35 @@
     min-height: 40px;
     margin-top: 1%;
 }
+
+@media all and (max-width: 1200px ){
+    .createPost-form{
+    width: 100%
+}
+    .createPost-btn{
+    width: 100%    
+}}
+
+@media all and (max-width: 992px ){
+    .createPost-form{
+    width: 80%
+}
+    .createPost-btn{
+    width: 80%    
+}}
+
+@media all and (max-width: 768px ){
+    .createPost-form{
+    width: 60%
+}
+    .createPost-btn{
+    width: 60%    
+}}
+
+@media all and (max-width: 600px ){
+    .createPost-form{
+    width: 50%
+}
+    .createPost-btn{
+    width: 50%    
+}}

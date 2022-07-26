@@ -62,3 +62,27 @@ p {
   background: #bb883b;
   color: white;
 }
+
+@media all and (max-width: 1200px ){
+  .card_image{
+  width: 100%
+}
+}
+
+@media all and (max-width: 992px ){
+  .card_image{
+  width: 80%
+}
+}
+
+@media all and (max-width: 768px ){
+  .card_image{
+  width: 60%
+}
+}
+
+@media all and (max-width: 600px ){
+  .card_image{
+  width: 100%
+}
+}
