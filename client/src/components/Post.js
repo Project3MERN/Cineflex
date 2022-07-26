@@ -19,9 +19,9 @@ function Post({ review }) {
 
     return(
         <div>
-            <p>{review.username}</p>
             <div key={review._id}>
                 <div className={editSelected ? 'modal-selected' : 'PostCard'}>
+                    <p className='post-username'>{review.username}</p>
                     <div className='post-edit-delete-btn-wrapper'>
                         <button className='post-delete-btn'>Delete</button>
                         <button
@@ -37,7 +37,7 @@ function Post({ review }) {
                         <p>{review.reviewText}</p>
                         <div>
                             <Link
-                                to={`/singlePost/${review._id}`}
+                                to={`/review/${review._id}`}
                                 className='post-Link'
                             >
                                 {review.createdAt}

@@ -49,3 +49,9 @@
 .post-Link {
     color: #FFE066;
 }
+
+.post-username {
+    padding-top: 15px;
+    padding-left: 15px;
+    font-size: 20px;
+}

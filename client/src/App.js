@@ -70,7 +70,7 @@ function App() {
                 element = {<Create />}
               />}
               <Route
-                path = "/singlePost/:reviewId"
+                path = "/review/:id"
                 element = {<SinglePost />}
               />
             </Routes>
