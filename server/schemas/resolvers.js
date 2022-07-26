@@ -25,6 +25,7 @@ const resolvers = {
             const all = Review.find()
                 .populate('movie')
                 .populate('comments')
+                .sort({ createdAt: -1 });
             return all
         },
         movie: async (parent, { name }) => {

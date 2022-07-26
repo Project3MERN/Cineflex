@@ -1,15 +1,9 @@
 .createPost-formWrapper {
     display: flex;
-    height: calc(100vh);
     flex-direction: column;
     justify-content: center;
-    background-image: linear-gradient(
-        rgba(255, 255, 255, 0.1),
-        rgba(255, 255, 255, 0.1)),
-        url('../assets/images/create-post.jpg');
     background-size: cover;
     align-items: center;
-    color: white;
 }
 
 .createPost-form {
@@ -21,18 +15,14 @@
 
 .createPost-label {
     margin: 10px 0;
-    border: 0;
     border-radius: 10px;
-    outline: none;
 }
 
 .createPost-input {
     padding: 10px;
     background-color: white;
-    border: 0;
     opacity: 0.9;
     border-radius: 10px;
-    outline: none;
 }
 
 .createPost-input-review {
@@ -48,4 +38,15 @@
 .createPost-btn {
     margin-top: 20px;
     cursor: pointer;
+    background-color: #FFE066;
+    border: 0;
+    width: 100%;
+    padding: 1%;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
+    color: black;
+    min-height: 40px;
+    margin-top: 1%;
 }

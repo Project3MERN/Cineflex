@@ -1,17 +1,16 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
+
 import '../css/post.css'
-import { GET_ALLREVIEWS } from '../utils/queries';
 
 
-function PostList() {
-    const { loading, data } = useQuery(GET_ALLREVIEWS);
-    const reviews = data?.allReviews || [];
+
+function PostList({ reviews }) {
 
     console.log(reviews)
     return (
         <div>
-            {reviews.map(review => (
+            {
+                reviews.map(review => (
                     <div key={review._id} className="PostCard">
                         <div className = "PostDetails">
                             <h3>
@@ -25,7 +24,8 @@ function PostList() {
                             <span></span>
                         </div>
                     </div>
-                ))}
+                ))
+            }
         </div>
 
     )
