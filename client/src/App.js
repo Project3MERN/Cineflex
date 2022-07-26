@@ -9,6 +9,7 @@ import Login from "./pages/Login";
 import Signup from './pages/Signup';
 import Movie from './pages/Movies'
 import SingleMovie from './pages/SingleMovie'
+import SinglePost from './pages/SinglePost'
 import './css/app.css'
 // import Dashboard from "./pages/Dashboard";
 import Create from './pages/Create'
@@ -77,6 +78,10 @@ function App() {
               path="/createPost"
               element={<Create />}
             />}
+            <Route
+                path = "/review/:id"
+                element = {<SinglePost />}
+            />
           </Routes>
         </main>
       </Router>
