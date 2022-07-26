@@ -105,11 +105,11 @@ export const SINGLE_REVIEW = gql`
       _id
       movie{
         name
-        averageScore
       }
       reviewText
       createdAt
       score
+      username
       comments{
         commentBody
         username
