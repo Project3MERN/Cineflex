@@ -7,6 +7,7 @@ import Home from "./pages/Home.js"
 import ExplorePage from './pages/ExplorePage';
 import Login from "./pages/Login";
 import Signup from './pages/Signup';
+import SinglePost from './pages/SinglePost'
 import './css/app.css'
 // import Dashboard from "./pages/Dashboard";
 import Create from './pages/Create'
@@ -68,6 +69,10 @@ function App() {
                 path = "/createPost"
                 element = {<Create />}
               />}
+              <Route
+                path = "/singlePost/:reviewId"
+                element = {<SinglePost />}
+              />
             </Routes>
           </main>
       </Router>

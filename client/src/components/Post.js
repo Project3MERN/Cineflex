@@ -19,38 +19,35 @@ function Post({ review }) {
 
     return(
         <div>
-                            <p>
-                                {review.username}
-                            </p>
-
-                    <div key={review._id}>
-                        <div className={editSelected ? 'modal-selected' : 'PostCard'}>
-                            <div className='post-edit-delete-btn-wrapper'>
-                                <button className='post-delete-btn'>Delete</button>
-                                <button
-                                    className='post-edit-btn'
-                                    onClick={handleEditSelected}
-                                >   
-                                    Edit
-                                </button>                    
-                            </div>
-                            <div className = "PostDetails">
-                            <h3>
-                                {review.movie[0].name}
-                            </h3>
-                            
-                            <p className = "Rating">{review.score}</p>
-                            <p>{review.reviewText}</p>
-                            <div>{review.createdAt}</div>
+            <p>{review.username}</p>
+            <div key={review._id}>
+                <div className={editSelected ? 'modal-selected' : 'PostCard'}>
+                    <div className='post-edit-delete-btn-wrapper'>
+                        <button className='post-delete-btn'>Delete</button>
+                        <button
+                            className='post-edit-btn'
+                            onClick={handleEditSelected}
+                        >   
+                            Edit
+                        </button>                    
+                    </div>
+                    <div className = "PostDetails">
+                        <h3>{review.movie[0].name}</h3>
+                        <p className = "Rating">{review.score}</p>
+                        <p>{review.reviewText}</p>
+                        <div>
+                            <Link
+                                to={`/singlePost/${review._id}`}
+                                className='post-Link'
+                            >
+                                {review.createdAt}
+                            </Link>
                         </div>
                     </div>
-                        {editSelected && <PostEdit handleEditClose={handleEditClose}/>}
-                        <Comment comments={review.comments} />
-                   </div>
-            
-            
-
-            
+                    </div>
+                    {editSelected && <PostEdit handleEditClose={handleEditClose}/>}
+                    <Comment comments={review.comments} />
+            </div>
         </div>
     )
 }

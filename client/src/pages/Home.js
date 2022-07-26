@@ -10,7 +10,6 @@ const Home = () => {
 
   const { loading, data} = useQuery(GET_ALLREVIEWS)
   const reviews = data?.allReviews || [];
-  console.log(reviews);
   // const [reviews, setReviews] = useState([])
   
   // useEffect(() => {
