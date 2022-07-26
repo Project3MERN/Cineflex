@@ -1,57 +1,57 @@
 .PostCard {
-    background-color: #1E1E1E;
-    color: white;
-    margin: 1% 2%;
-    border-radius: 10px;
+  background-color: #1e1e1e;
+  color: white;
+  margin: 1% 2%;
+  border-radius: 10px;
 }
 
 .PostDetails {
-    padding: 1%;
+  padding: 1%;
 }
 
 .Rating {
-    color: #FFE066;
+  color: #ffe066;
 }
 
 .post-edit-delete-btn-wrapper {
-    display: flex;
-    margin: 10px;
-    padding-top: 10px;
-    flex-direction: row-reverse;
+  display: flex;
+  margin: 10px;
+  padding-top: 10px;
+  flex-direction: row-reverse;
 }
 
 .post-edit-btn {
-    margin-right: 5px;
-    background-color: green;
-    cursor: pointer;
+  margin-right: 5px;
+  background-color: green;
+  cursor: pointer;
 }
 
 .post-delete-btn {
-    background-color: darkred;
-    cursor: pointer;
+  background-color: darkred;
+  cursor: pointer;
 }
 
 .post-edit-btn,
 .post-delete-btn {
-    color: white;
-    padding: 4px 10px;
-    border: none;
-    border-radius: 10px;
-    font-weight: bolder;
+  color: white;
+  padding: 4px 10px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bolder;
 }
 
 .modal-selected {
-    opacity: 0.9;
-    background-color: lightgray;
-    border-radius: 10px;
+  opacity: 0.9;
+  background-color: lightgray;
+  border-radius: 10px;
 }
 
 .post-Link {
-    color: #FFE066;
+  color: #ffe066;
 }
 
 .post-username {
-    padding-top: 15px;
-    padding-left: 15px;
-    font-size: 20px;
+  padding-top: 15px;
+  padding-left: 15px;
+  font-size: 20px;
 }
