@@ -49,7 +49,8 @@ function CreatePost() {
                 query: GET_ALLREVIEWS,
                 data: { 
                     allReviews: {
-                        addReview, ...allReviews 
+                        ...allReviews,
+                        addReview
                     }
                 }
             });
