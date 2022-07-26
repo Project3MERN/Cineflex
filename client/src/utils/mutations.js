@@ -31,8 +31,8 @@ export const ADD_REVIEW = gql`
         movie{
           _id
           name
-          averageScore
         }
+        username
         reviewText
         createdAt
         score

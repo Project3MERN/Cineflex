@@ -3,10 +3,9 @@ import "../css/createPost.css";
 import { useMutation } from "@apollo/client";
 import { ADD_REVIEW } from "../utils/mutations";
 import { useNavigate } from 'react-router-dom';
+import { GET_ALLREVIEWS } from '../utils/queries';
 
 function CreatePost() {
-    const [addReview, { error }] = useMutation(ADD_REVIEW);
-
 
     const [movie, setMovie] = useState('')
     const [reviewText, setReviewText] = useState('')
@@ -29,7 +28,7 @@ function CreatePost() {
                 setScore('');
 
                 // redirect to explore page
-                navigate('/explore');
+                // navigate('/explore');
             } catch (err) {
                 console.error(JSON.stringify(err));
             }
@@ -37,6 +36,25 @@ function CreatePost() {
             console.error(e);
         }
     }    
+
+    const [addReview, { error }] = useMutation(ADD_REVIEW, {
+        update(cache, { data: { addReview } }) {
+            // read what is in cache
+            const newPost = { movie, reviewText, score }
+            const { allReviews } = cache.readQuery({ query: GET_ALLREVIEWS });
+            console.log(allReviews);
+            
+            // prepend newest review to front of array
+            cache.writeQuery({
+                query: GET_ALLREVIEWS,
+                data: { 
+                    allReviews: {
+                        addReview, ...allReviews 
+                    }
+                }
+            });
+        }
+    });
 
     return (
         <div className="createPost-formWrapper">
