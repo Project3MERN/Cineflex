@@ -15,7 +15,7 @@ function CreatePost() {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        if(movie && reviewText && score) {
+        if (movie && reviewText && score) {
             const newPost = { movie, reviewText, score }
             try {
                 // add review to db
@@ -35,7 +35,7 @@ function CreatePost() {
         } else {
             console.error(e);
         }
-    }    
+    }
 
     const [addReview, { error }] = useMutation(ADD_REVIEW, {
         update(cache, { data: { addReview } }) {
@@ -43,11 +43,11 @@ function CreatePost() {
             const newPost = { movie, reviewText, score }
             const { allReviews } = cache.readQuery({ query: GET_ALLREVIEWS });
             console.log(allReviews);
-            
+
             // prepend newest review to front of array
             cache.writeQuery({
                 query: GET_ALLREVIEWS,
-                data: { 
+                data: {
                     allReviews: {
                         ...allReviews,
                         addReview
@@ -60,12 +60,12 @@ function CreatePost() {
     return (
         <div className="createPost-formWrapper">
             <form
-                className="createPost-form" 
+                className="createPost-form"
                 onSubmit={handleSubmit}>
                 <label
                     className="createPost-label"
                     htmlFor='movie'
-                    >Movie
+                >Movie
                 </label>
                 <input
                     className="createPost-input"
@@ -78,7 +78,7 @@ function CreatePost() {
                 <label
                     className="createPost-label"
                     htmlFor='reviewText'
-                    >Review
+                >Review
                 </label>
                 <textarea
                     className="createPost-input-review"
@@ -91,7 +91,7 @@ function CreatePost() {
                 <label
                     className="createPost-label"
                     htmlFor='score'
-                    >Rating
+                >Rating
                 </label>
                 <input
                     className="createPost-input"
@@ -103,12 +103,12 @@ function CreatePost() {
                     value={score}
                     onChange={(e) => setScore(e.target.value)}
                 />
-                <button type = "submit" className="createPost-btn">
+                <button type="submit" className="createPost-btn">
                     Create Post
                 </button>
                 {error && <div>Something went wrong! Please try again.</div>}
             </form>
-            
+
         </div>
     )
 }

@@ -30,7 +30,7 @@ const resolvers = {
         },
         movie: async (parent, { _id }) => {
             return Movie.findOne({ _id })
-            // .populate('reviews')
+                .populate('reviews')
         },
         review: async (parent, { _id }) => {
             return Review.findOne({ _id }).populate('movie').populate('comments')
