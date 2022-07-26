@@ -46,7 +46,7 @@ const typeDefs = gql`
         user(username: String!): User
         allMovies: [Movie]
         allReviews: [Review]
-        movie(name: String!): Movie
+        movie(_id: ID!): Movie
         review(_id: ID!): Review
     }
 
