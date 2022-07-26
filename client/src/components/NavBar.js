@@ -14,7 +14,7 @@ const NavBar = () => {
         <nav>
             <ul className="NavList">
                 {/* pending <Link to = "{route}" components */}
-                <li>    
+                <li>
                     <Link to="/">
                         Home
                     </Link>
@@ -22,6 +22,11 @@ const NavBar = () => {
                 <li>
                     <Link to="/explore">
                         Explore
+                    </Link>
+                </li>
+                <li>
+                    <Link to="/movies">
+                        Movies
                     </Link>
                 </li>
                 {Auth.loggedIn() ? (
@@ -42,7 +47,7 @@ const NavBar = () => {
                         </li>
                     </>
                 )}
-                
+
             </ul>
         </nav>
     )

@@ -7,6 +7,8 @@ import Home from "./pages/Home.js"
 import ExplorePage from './pages/ExplorePage';
 import Login from "./pages/Login";
 import Signup from './pages/Signup';
+import Movie from './pages/Movies'
+import SingleMovie from './pages/SingleMovie'
 import './css/app.css'
 // import Dashboard from "./pages/Dashboard";
 import Create from './pages/Create'
@@ -39,37 +41,44 @@ function App() {
 
   return (
     <ApolloProvider client={client}>
-      <Router>  
-          <Header />
-          <main>
-            <Routes>
-              <Route
-                path = "/"
-                element = {<Home />}
-              />
-              <Route
-                path="/explore"
-                element = {
-                  <>
-                    <ExplorePage />
-                    {/* <Dashboard /> */}
-                  </>
-                }
-              />
-              <Route
-                path = "/login"
-                element = {<Login />}
-              />
-              <Route
-                path = "/signup"
-                element = {<Signup />}
-              />
-              {user && <Route
-                path = "/createPost"
-                element = {<Create />}
-              />}
-            </Routes>
-          </main>
+      <Router>
+        <Header />
+        <main>
+          <Routes>
+            <Route
+              path="/"
+              element={<Home />}
+            />
+            <Route
+              path="/explore"
+              element={
+                <>
+                  <ExplorePage />
+                  {/* <Dashboard /> */}
+                </>
+              }
+            />
+            <Route
+              path='/movies'
+              element={<Movie></Movie>}
+            ></Route>
+
+            <Route path='/movie/:id' element={<SingleMovie></SingleMovie>}></Route>
+
+            <Route
+              path="/login"
+              element={<Login />}
+            />
+            <Route
+              path="/signup"
+              element={<Signup />}
+            />
+            {user && <Route
+              path="/createPost"
+              element={<Create />}
+            />}
+          </Routes>
+        </main>
       </Router>
     </ApolloProvider>
   );

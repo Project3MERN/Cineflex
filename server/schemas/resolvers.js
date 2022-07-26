@@ -27,9 +27,9 @@ const resolvers = {
                 .populate('comments')
             return all
         },
-        movie: async (parent, { name }) => {
-            return Movie.findOne({ name })
-                .populate('reviews')
+        movie: async (parent, { _id }) => {
+            return Movie.findOne({ _id })
+            // .populate('reviews')
         },
         review: async (parent, { _id }) => {
             return Review.findOne({ _id }).populate('movie').populate('comments')

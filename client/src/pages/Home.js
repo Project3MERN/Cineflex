@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
 
-  const { loading, data} = useQuery(GET_ALLREVIEWS)
+  const { loading, data } = useQuery(GET_ALLREVIEWS)
   const reviews = data?.allReviews || [];
-  console.log(reviews);
+  console.log(data)
   // const [reviews, setReviews] = useState([])
-  
+
   // useEffect(() => {
   //   if(data) {
   //     setReviews(data.allReviews)
@@ -36,9 +36,9 @@ const Home = () => {
         <div>
           {reviews.map(review => {
             return (
-            <div key={review._id}>
-              <Post review={review} />
-            </div>
+              <div key={review._id}>
+                <Post review={review} />
+              </div>
             )
           })}
           {/* {loading ? (
@@ -46,8 +46,8 @@ const Home = () => {
           ) : (
             <Post reviews={reviews} />
           )} */}
-         </div>
-        
+        </div>
+
         <button className="card_btn">
           <Link to="/login">Sign In To View</Link>
         </button>

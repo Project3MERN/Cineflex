@@ -47,11 +47,17 @@ export const GET_ALLUSERS = gql`
 `;
 
 export const GET_ALLMOVIES = gql`
-  {
+  query movies {
     allMovies {
       _id
       name
-      reviews
+      reviews {
+        _id
+        reviewText
+        createdAt
+        score
+        username
+      }
       averageScore
     }
   }
@@ -80,17 +86,15 @@ export const GET_ALLREVIEWS = gql`
 `;
 
 export const SINGLE_MOVIE = gql`
-  query movie($name: String!) {
-    movie(name: $name) {
+  query movie($id: ID!) {
+    movie(_id: $id) {
       _id
       name
       reviews {
-        movie
         reviewText
         score
         username
       }
-      averageScore
     }
   }
 `
