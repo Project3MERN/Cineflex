@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Auth from '../utils/auth'
 import { LOGGED_IN_USER } from '../utils/queries'
 import { useQuery } from '@apollo/client'
