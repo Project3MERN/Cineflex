@@ -18,7 +18,7 @@ class AuthService {
         try {
             const decoded = decode(token);
             // divided by 1000 to convert to Unix timestamp
-            if(decoded.exp < Date.now() / 1000) {
+            if (decoded.exp < Date.now() / 1000) {
                 return true;
             } else {
                 return false;
@@ -36,7 +36,7 @@ class AuthService {
     // set token to local storage and reload to homepage
     login(idToken) {
         localStorage.setItem('id_token', idToken);
-        window.location.assign('/');
+        window.location.assign('/profile');
     };
 
     logout() {

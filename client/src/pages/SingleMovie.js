@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import React, { useEffect } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { SINGLE_MOVIE } from "../utils/queries";
 import Auth from "../utils/auth";
@@ -21,7 +21,7 @@ const SingleMovie = () => {
 
     if (data) {
         return (
-            <div>
+            <div >
                 <h1>{movies.name}</h1>
                 {loggedIn && <>
                     <h2>Write a Review</h2>
@@ -30,10 +30,10 @@ const SingleMovie = () => {
                 <h2>Reviews:</h2>
                 {movies.reviews.map(review => {
                     return (
-                        <div key={review._id}>
-                            <p>Text: {review.reviewText}</p>
+                        <div className="movie_list" key={review._id}>
+                            <p className="rating">Text: {review.reviewText}</p>
                             <p>Score: {review.score}/5</p>
-                            <p>By: {review.username}</p>
+                            <p className="rating">By: {review.username}</p>
                         </div>
                     )
                 })}

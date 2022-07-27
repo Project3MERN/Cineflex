@@ -1,21 +1,25 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { GET_ALLREVIEWS, SINGLE_MOVIE, GET_ALLMOVIES } from '../utils/queries';
+import { GET_ALLREVIEWS, GET_ALLMOVIES, LOGGED_IN_USER } from '../utils/queries';
 import "../css/createPost.css";
 import { ADD_REVIEW } from '../utils/mutations';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 
 const ReviewInMovie = ({ movieName }) => {
-    const { id: movieId } = useParams();
+    // const { id: movieId } = useParams();
     const [reviewText, setReviewText] = useState("")
     const [score, setScore] = useState('')
 
     const [addReview, { error }] = useMutation(ADD_REVIEW, {
         update(cache, { data: { addReview } }) {
+            console.log(addReview)
             try {
                 // const movieData = cache.readQuery({ query: SINGLE_MOVIE, variables: { id: movieId } });
                 const allReviews = cache.readQuery({ query: GET_ALLREVIEWS })
                 const allMovieData = cache.readQuery({ query: GET_ALLMOVIES })
+                const loggedInUser = cache.readQuery({ query: LOGGED_IN_USER });
+                console.log(loggedInUser.loggedInUser)
+
                 // console.log(allReviews)
                 // console.log(movieData)
                 // cache.writeQuery({
@@ -39,6 +43,10 @@ const ReviewInMovie = ({ movieName }) => {
                             addReview
                         }
                     }
+                })
+                cache.writeQuery({
+                    query: LOGGED_IN_USER,
+                    data: { loggedInUser: { ...loggedInUser, reviews: [...loggedInUser.loggedInUser.reviews, addReview] } }
                 })
             } catch (err) {
                 console.log(err)

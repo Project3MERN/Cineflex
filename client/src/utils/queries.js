@@ -148,11 +148,12 @@ export const LOGGED_IN_USER = gql`
       reviews{
         _id
         movie{
+          _id
           name
         }
         reviewText
+        score
         createdAt
-        Score
       }
     }
   }

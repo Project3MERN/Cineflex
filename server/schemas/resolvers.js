@@ -10,7 +10,14 @@ const resolvers = {
         },
         loggedInUser: async (parent, args, context) => {
             if (context.user) {
-                const userData = await User.findOne({ _id: context.user._id }).populate('reviews')
+                const userData = await User.findOne({ _id: context.user._id })
+                    .populate({
+                        path: 'reviews',
+                        populate: {
+                            path: 'movie',
+                            model: 'Movie'
+                        }
+                    })
                 return userData
             }
         },
