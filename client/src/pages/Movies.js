@@ -20,7 +20,7 @@ const Movie = () => {
             <p className="rating">{movie.averageScore}</p>
             <Link className="movie_link" to={`/movie/${movie._id}`}>
               <p>
-                <u>View reviews made on this movie</u>
+                <u>View Reviews &rarr;</u>
               </p>
             </Link>
           </div>

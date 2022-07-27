@@ -21,7 +21,7 @@ const NavBar = () => {
                 </li>
                 <li>
                     <Link to="/explore">
-                        Explore
+                        Feed
                     </Link>
                 </li>
                 <li>
@@ -31,9 +31,6 @@ const NavBar = () => {
                 </li>
                 {Auth.loggedIn() ? (
                     <>
-                        <Link to="/createPost">
-                            Create
-                        </Link>
                         <a href="/" onClick={logout}>
                             Logout
                         </a>

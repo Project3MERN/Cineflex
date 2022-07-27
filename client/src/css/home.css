@@ -1,26 +1,21 @@
-h1,
-h2,
-h3 {
-  color: #bb883b;
-}
-
-p {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
 
 .home {
   margin: 2rem;
   background-color: #e0e2db;
+  padding: 4% 2%;
+  border-radius: 10px;
 }
 
 .home_hero {
-  background-image: "../assets/movies-background.jpg";
-  opacity: 50%;
+  text-align: center;
 }
-
 .trending {
   display: flex;
-  flex-direction: row;
+  justify-content: center;
+}
+
+.newsletter {
+  text-align: center;
 }
 
 .card {
@@ -69,11 +64,20 @@ p {
   color: white;
 }
 
-.newsletter {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+button {
+  background-color: #FFE066;
+    border: 0;
+    width: 50%;
+    padding: 1%;
+    font-weight: bold;
+    transition: background-color 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
+    color: black;
+    min-height: 40px;
+    margin-top: 1%;
 }
+
 
 @media all and (max-width: 1200px ){
   .card_image{
