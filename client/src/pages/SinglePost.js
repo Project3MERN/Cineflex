@@ -9,16 +9,6 @@ import { SINGLE_REVIEW } from '../utils/queries';
 
 const  SinglePost = (props) => {
 
-  const [editSelected, setEditSelected] = useState(false)
-
-  function handleEditSelected() {
-      setEditSelected(true)
-  }
-
-  function handleEditClose() {
-      setEditSelected(false)
-  }
-
     const { id: reviewId} = useParams();
     console.log(reviewId);
 
@@ -46,13 +36,7 @@ const  SinglePost = (props) => {
               <div className='PostCard'>
                 <p className='post-username'>{review.username}</p>
                 <div className='post-edit-delete-btn-wrapper'>
-                  <button className='post-delete-btn'>Delete</button>
-                  <button
-                    className='post-edit-btn'
-                    onClick={handleEditSelected}
-                  >   
-                    Edit
-                  </button>                    
+                  <button className='post-delete-btn'>Delete</button>                   
                 </div>
                 <div className = "PostDetails">
                 <h3>{review.movie[0].name}</h3>
@@ -61,7 +45,7 @@ const  SinglePost = (props) => {
                   <div>{review.createdAt}</div>
                 </div>
               </div>
-              {editSelected && <PostEdit handleEditClose={handleEditClose}/>}
+              <Comment review={review.comments}/>
               {review.comments.map(comment => (
                 <div key={comment.id}>
                   <h3>{comment.username}</h3>

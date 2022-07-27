@@ -1,31 +1,29 @@
 import React, { useState } from 'react';
 
-function Comment() {
+function Comment({review}) {
+
+    console.log(review)
 
     const [comment, setComment] = useState('')
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        if(comment) {
-            const newComment = {comment};
-            console.log(newComment);
-            setComment('')
-        } else {
-            console.error(e)
-        }
-    }
+    // function handleSubmit(e) {
+    //     e.preventDefault();
+    //     if(comment) {
+    //         const newComment = {comment};
+    //         console.log(newComment);
+    //         setComment('')
+    //     } else {
+    //         console.error(e)
+    //     }
+    // }
 
     return(
         <div className='comment-formWrapper'>   
             <form 
                 className='comment-form'
-                onSubmit={handleSubmit}>
+                >
                 {/* if user logged in, have user name pulled from user and inserted into label */}
-                <label 
-                    className='comment-label'
-                    htmlFor='comment'
-                    >username
-                </label>
+            
                 <textarea 
                     className='comment-input'
                     type='text'
