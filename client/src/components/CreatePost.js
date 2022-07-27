@@ -3,7 +3,7 @@ import "../css/createPost.css";
 import { useMutation } from "@apollo/client";
 import { ADD_REVIEW } from "../utils/mutations";
 import { useNavigate } from 'react-router-dom';
-import { GET_ALLREVIEWS } from '../utils/queries';
+import { GET_ALLREVIEWS, LOGGED_IN_USER } from '../utils/queries';
 
 function CreatePost() {
 
@@ -42,6 +42,7 @@ function CreatePost() {
             // read what is in cache
             const newPost = { movie, reviewText, score }
             const { allReviews } = cache.readQuery({ query: GET_ALLREVIEWS });
+            const loggedInUser = cache.readQuery({ query: LOGGED_IN_USER })
             console.log(allReviews);
 
             // prepend newest review to front of array
@@ -54,6 +55,10 @@ function CreatePost() {
                     }
                 }
             });
+            cache.writeQuery({
+                query: LOGGED_IN_USER,
+                data: { loggedInUser: { ...loggedInUser, reviews: [...loggedInUser.loggedInUser.reviews, addReview] } }
+            })
         }
     });
 
