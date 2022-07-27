@@ -77,35 +77,39 @@
 
 @media all and (max-width: 1200px ){
     .login-input{
-    width: 100%
-  }
+        width: 100%
+    }
     .login-btn{
-    width: 100%    
-  }}
+        width: 100%    
+    }
+}
 
 @media all and (max-width: 992px ){
     .login-input{
-    width: 80%
-  }
+        width: 80%
+    }
     .login-btn{
-    width: 80%    
-  }}
+        width: 80%    
+    }
+}
 
 @media all and (max-width: 768px ){
     .login-input{
-    width: 60%
-  }
+        width: 60%
+    }
     .login-btn{
-    width: 60%    
-  }}  
+        width: 60%    
+    }
+}  
 
 @media all and (max-width: 600px ){
     .login-input{
-    width: 50%
-  }
+        width: 50%
+    }
     .login-btn{
-    width: 50%    
-  }}
+        width: 50%    
+    }
+}
   
  
   

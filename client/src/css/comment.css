@@ -41,44 +41,45 @@
 
 @media all and (max-width: 1200px ){
     .comment-input{
-    width: 100%
-}
+    width: 100%;
+    }
     .comment-btn{
-    width: 100%    
-}}
+    width: 100%;
+    }
+}
 
 @media all and (max-width: 992px ){
     .comment-input{
-    width: 80%
-}
+    width: 80%;
+    }
     .comment-btn{
-    width: 80%    
-}
+    width: 80%;   
+    }
     .comment-form{
-    width: 30%    
+    width: 30%;    
     }
 }
 
 @media all and (max-width: 768px ){
     .comment-input{
-    width: 60%
-}
+        width: 60%
+    }
     .comment-btn{
-    width: 60%    
-}
+        width: 60%    
+    }
 .comment-form{
-    width: 20%    
+        width: 20%    
     }
 }
 
 @media all and (max-width: 600px ){
     .comment-input{
-    width: 50%
-}
+        width: 50%
+    }
     .comment-btn{
-    width: 50%    
-}
-.comment-form{
-    width: 10%    
+        width: 50%    
+    }
+    .comment-form{
+        width: 10%    
     }
 }
