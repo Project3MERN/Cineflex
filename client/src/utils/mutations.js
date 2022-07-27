@@ -73,41 +73,11 @@ export const REMOVE_REVIEW = gql`
       _id
       username
       email
-      reviews{
-        _id
-        movie{
-          _id
-          name
-          reviews
-          averageScore
-        }
+      reviews {
         reviewText
-        createdAt
-        score
-        comments{
-          _id
-          commentBody
-          createdAt
-          username
+        movie {
+          name
         }
-      }
-      favorites{
-         _id
-          name
-          reviews
-          averageScore
-      }
-      watchedList{
-          _id
-          name
-          reviews
-          averageScore
-      }
-      wishList{
-          _id
-          name
-          reviews
-          averageScore
       }
     }
   }

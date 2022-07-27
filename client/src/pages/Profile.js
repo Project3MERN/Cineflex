@@ -1,8 +1,8 @@
 import React from 'react'
 import Auth from '../utils/auth'
 import { LOGGED_IN_USER } from '../utils/queries'
-import { REMOVE_REVIEW } from '../utils/mutations'
-import { useQuery, useMutation } from '@apollo/client'
+import { useQuery } from '@apollo/client'
+import RemoveReview from '../components/DeleteReview'
 
 
 function Profile() {
@@ -20,7 +20,7 @@ function Profile() {
         )
     }
     const userInfo = data?.loggedInUser || {}
-    console.log(userInfo)
+
 
 
 
@@ -29,17 +29,13 @@ function Profile() {
             <h1>{`Viewing ${userInfo.username}'s Profile`}</h1>
             <h2>Reviews that you have left!</h2>
             {userInfo.reviews.map(review => {
-                console.log(review)
                 return (
-                    <div className='movie_list' key={review._id}>
-                        <p>Review: {review.reviewText}</p>
-                        <p className='rating'>Score: {review.score}/5</p>
-                        <p>Movie: {review.movie[0].name}</p>
+                    <div key={review._id}>
+                        <RemoveReview review={review}></RemoveReview>
                     </div>
                 )
             })}
-
-        </div>
+        </div >
     )
 }
 
