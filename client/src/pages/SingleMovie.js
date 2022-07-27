@@ -1,5 +1,5 @@
 import { useQuery } from "@apollo/client";
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { SINGLE_MOVIE } from "../utils/queries";
 import Auth from "../utils/auth";

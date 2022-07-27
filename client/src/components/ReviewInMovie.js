@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
-import { GET_ALLREVIEWS, SINGLE_MOVIE } from '../utils/queries';
+import { GET_ALLREVIEWS, SINGLE_MOVIE, GET_ALLMOVIES } from '../utils/queries';
 import "../css/createPost.css";
 import { ADD_REVIEW } from '../utils/mutations';
 import { useParams } from 'react-router-dom';
@@ -13,19 +13,29 @@ const ReviewInMovie = ({ movieName }) => {
     const [addReview, { error }] = useMutation(ADD_REVIEW, {
         update(cache, { data: { addReview } }) {
             try {
-                const movieData = cache.readQuery({ query: SINGLE_MOVIE, variables: { id: movieId } });
+                // const movieData = cache.readQuery({ query: SINGLE_MOVIE, variables: { id: movieId } });
                 const allReviews = cache.readQuery({ query: GET_ALLREVIEWS })
-                console.log(allReviews)
-                console.log(movieData)
-                cache.writeQuery({
-                    query: SINGLE_MOVIE,
-                    data: { movie: { ...movieData, _id: movieId, name: movieName, reviews: addReview } }
-                })
+                const allMovieData = cache.readQuery({ query: GET_ALLMOVIES })
+                // console.log(allReviews)
+                // console.log(movieData)
+                // cache.writeQuery({
+                //     query: SINGLE_MOVIE,
+                //     data: { movie: { ...movieData.reviews, reviews: { _id: movieId, reviewText: reviewText, score: score, name: movieName } } }
+                // })
                 cache.writeQuery({
                     query: GET_ALLREVIEWS,
                     data: {
                         allReviews: {
                             ...allReviews,
+                            addReview
+                        }
+                    }
+                })
+                cache.writeQuery({
+                    query: GET_ALLMOVIES,
+                    data: {
+                        allMovies: {
+                            ...allMovieData,
                             addReview
                         }
                     }
