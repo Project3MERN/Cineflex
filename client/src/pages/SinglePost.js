@@ -62,7 +62,13 @@ const  SinglePost = (props) => {
                 </div>
               </div>
               {editSelected && <PostEdit handleEditClose={handleEditClose}/>}
-              <Comment comments={review.comments} />
+              {review.comments.map(comment => (
+                <div key={comment.id}>
+                  <h3>{comment.username}</h3>
+                  <div>{comment.commentBody}</div>
+                  <div>{comment.createdAt}</div>
+                </div>
+              ))}
       </div>
     )
 }

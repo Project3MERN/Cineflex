@@ -46,7 +46,7 @@ function Post({ review }) {
                     </div>
                     </div>
                     {editSelected && <PostEdit handleEditClose={handleEditClose}/>}
-                    <Comment comments={review.comments} />
+                    
             </div>
         </div>
     )

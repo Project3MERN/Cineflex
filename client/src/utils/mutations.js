@@ -53,8 +53,6 @@ export const ADD_COMMENT = gql`
         movie{
           _id
           name
-          reviews
-          averageScore
         }
         reviewText
         createdAt

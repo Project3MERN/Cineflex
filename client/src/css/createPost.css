@@ -4,6 +4,8 @@
     justify-content: center;
     background-size: cover;
     align-items: center;
+    height: 600px;
+    background-image: url('../assets/images/create-post.jpg');
 }
 
 .createPost-form {
