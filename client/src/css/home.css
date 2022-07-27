@@ -64,10 +64,10 @@
   color: white;
 }
 
-button {
+.card_btn {
   background-color: #FFE066;
     border: 0;
-    width: 50%;
+    width: 40%;
     padding: 1%;
     font-weight: bold;
     transition: background-color 0.3s;
@@ -78,6 +78,20 @@ button {
     margin-top: 1%;
 }
 
+.small_btn {
+  width: 20%;
+}
+
+input {
+  width: 20%;
+}
+
+.donationForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 @media all and (max-width: 1200px ){
   .card_image{
