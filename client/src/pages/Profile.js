@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Auth from '../utils/auth'
 import { LOGGED_IN_USER } from '../utils/queries'
 import { useQuery } from '@apollo/client'
 import RemoveReview from '../components/DeleteReview'
+import { Link } from 'react-router-dom'
 
 
 function Profile() {
@@ -20,23 +21,34 @@ function Profile() {
         )
     }
     const userInfo = data?.loggedInUser || {}
+    console.log(userInfo)
 
+    if (userInfo.reviews.length === 0) {
+        return (
+            <div>
+                <h1>You have not left any reviews!</h1>
+                <Link to={'/explore'}>
+                    <p>Leave a Review</p>
+                </Link>
+            </div>
+        )
+    }
 
-
-
-    return (
-        <div className='movies'>
-            <h1>{`Viewing ${userInfo.username}'s Profile`}</h1>
-            <h2>Reviews that you have left!</h2>
-            {userInfo.reviews.map(review => {
-                return (
-                    <div key={review._id}>
-                        <RemoveReview review={review}></RemoveReview>
-                    </div>
-                )
-            })}
-        </div >
-    )
+    if (userInfo.reviews) {
+        return (
+            <div className='movies'>
+                <h1>{`Viewing ${userInfo.username}'s Profile`}</h1>
+                <h2>Reviews that you have left!</h2>
+                {userInfo.reviews.map(review => {
+                    return (
+                        <div key={review._id}>
+                            <RemoveReview review={review}></RemoveReview>
+                        </div>
+                    )
+                })}
+            </div >
+        )
+    }
 }
 
 export default Profile
