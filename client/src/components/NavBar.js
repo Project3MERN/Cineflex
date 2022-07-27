@@ -9,6 +9,7 @@ const NavBar = () => {
         event.preventDefault();
         Auth.logout();
     }
+    const loggedIn = Auth.loggedIn();
 
     return (
         <nav>
@@ -19,6 +20,13 @@ const NavBar = () => {
                         Home
                     </Link>
                 </li>
+                {loggedIn &&
+                    <li>
+                        <Link to="/profile">
+                            Profile
+                        </Link>
+                    </li>
+                }
                 <li>
                     <Link to="/explore">
                         Feed
@@ -46,7 +54,7 @@ const NavBar = () => {
                 )}
 
             </ul>
-        </nav>
+        </nav >
     )
 };
 

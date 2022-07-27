@@ -10,6 +10,7 @@ import Signup from './pages/Signup';
 import Movie from './pages/Movies'
 import SingleMovie from './pages/SingleMovie'
 import SinglePost from './pages/SinglePost'
+import Profile from './pages/Profile'
 import './css/app.css'
 // import Dashboard from "./pages/Dashboard";
 import Create from './pages/Create'
@@ -51,6 +52,10 @@ function App() {
               element={<Home />}
             />
             <Route
+              path='/profile'
+              element={<Profile></Profile>}
+            ></Route>
+            <Route
               path="/explore"
               element={
                 <>
@@ -79,8 +84,8 @@ function App() {
               element={<Create />}
             />}
             <Route
-                path = "/review/:id"
-                element = {<SinglePost />}
+              path="/review/:id"
+              element={<SinglePost />}
             />
           </Routes>
         </main>
