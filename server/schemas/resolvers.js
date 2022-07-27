@@ -58,6 +58,7 @@ const resolvers = {
                 const review = await Review.create({ username: context.user.username, reviewText: args.reviewText, score: args.score, movie: movie })
                 updateUser(review)
                 updateMovie(review, movie)
+                return review
             }
             async function updateUser(review) {
                 console.log(review)
@@ -81,9 +82,11 @@ const resolvers = {
                 const movie = await Movie.findOne({ name: args.movie })
                 if (!movie) {
                     const newMovie = await Movie.create({ name: args.movie })
-                    createReview(newMovie)
+                    const newReview = await createReview(newMovie)
+                    return newReview
                 } else {
-                    createReview(movie)
+                    const newReview = createReview(movie)
+                    return newReview
                 }
             } else {
                 throw new AuthenticationError("User must be logged in to leave a review")
