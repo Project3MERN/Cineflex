@@ -33,28 +33,28 @@ const  SinglePost = (props) => {
       )
     }
     return (
-        <div>
-              <div className='PostCard'>
-                <p className='post-username'>{review.username}</p>
-                <div className='post-edit-delete-btn-wrapper'>
-                  <button className='post-delete-btn'>Delete</button>                   
-                </div>
-                <div className = "PostDetails">
-                <h3>{review.movie[0].name}</h3>
-                  <p className = "Rating">{review.score}</p>
-                  <p>{review.reviewText}</p>
-                  <div>{review.createdAt}</div>
-                </div>
+        <div className='singlePost-wrapper'>
+          <div className='PostCard'>
+            <p className='post-username'>{review.username}</p>
+              <div className='post-edit-delete-btn-wrapper'>
+                <button className='post-delete-btn'>Delete</button>                   
               </div>
-              {Auth.loggedIn() && <Comment reviewId={review._id}/>}
-              {review.comments.map(comment => (
-                <div key={comment.id}>
-                  <h3>{comment.username}</h3>
-                  <div>{comment.commentBody}</div>
-                  <div>{comment.createdAt}</div>
-                </div>
-              ))}
-      </div>
+              <div className = "PostDetails">
+                <h3>{review.movie[0].name}</h3>
+                <p className = "Rating">{review.score}</p>
+                <p>{review.reviewText}</p>
+                <div>{review.createdAt}</div>
+              </div>
+          </div>
+          {Auth.loggedIn() && <Comment reviewId={review._id}/>}
+          {review.comments.map(comment => (
+            <div key={comment.id}>
+               <h3>{comment.username}</h3>
+               <div>{comment.commentBody}</div>
+               <div>{comment.createdAt}</div>
+            </div>
+          ))}
+        </div>
     )
 }
 

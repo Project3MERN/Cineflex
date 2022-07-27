@@ -3,9 +3,9 @@ import NavBar from "./NavBar";
 
 const Header = () => {
     return (
-        <header>
+        <header className="header">
             <div>
-                <h1>Cineflex</h1>
+                <h1 className="header-title">Cineflex</h1>
             </div>
             <NavBar />
         </header>

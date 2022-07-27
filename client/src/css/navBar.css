@@ -10,11 +10,12 @@ nav ul {
     width: 100%;
     padding: 0;
     margin: 0;
+    margin-right: 10px;
 }
 
 nav ul li{
     list-style: none;
-    margin-left: 1%;
+    margin-left: 50px;
 }
 
 a {
@@ -22,21 +23,29 @@ a {
 }
 
 @media all and (max-width: 1200px ){
-  .nav ul{
-  width:100%
-  }}
+    nav ul{
+        width:100%
+    }
+}
 
 @media all and (max-width: 992px ){
-    .nav ul{
-    width:80%
-    }}  
+    nav ul{
+        width:80%
+    }
+}  
 
 @media all and (max-width: 768px ){
-    .nav ul{
-    width:60%
-    }}
+    nav ul{
+        width:60%
+    }
+
+    nav ul li{
+        margin-left: 15px;
+    }
+}
 
 @media all and (max-width: 600px ){
-    .nav ul{
-    width:50%
-    }}
+    nav ul{
+        width:50%
+    }
+}
