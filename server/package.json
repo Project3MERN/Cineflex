@@ -16,6 +16,7 @@
         "@faker-js/faker": "^7.3.0",
         "apollo-server-express": "^3.9.0",
         "bcrypt": "^4.0.1",
+        "dotenv": "^16.0.1",
         "express": "^4.17.1",
         "faker": "^5.5.3",
         "graphql": "^16.5.0",
