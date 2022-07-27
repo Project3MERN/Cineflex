@@ -131,7 +131,7 @@ const resolvers = {
                 const addingComment = await Review.findOneAndUpdate(
                     { _id: reviewId },
                     { $push: { comments: { commentBody, username: context.user.username } } },
-                    { new: true, runValidators: true }
+                    { new: true, runValidators: true, populate: { path: 'movie' } }
                 )
                 return addingComment
             }

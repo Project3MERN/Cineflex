@@ -105,6 +105,7 @@ export const SINGLE_REVIEW = gql`
     review(_id: $id) {
       _id
       movie{
+        _id
         name
       }
       reviewText
