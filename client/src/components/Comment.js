@@ -1,41 +1,56 @@
 import React, { useState } from 'react';
 
-function Comment({review}) {
+import { useMutation } from '@apollo/client';
+import { ADD_COMMENT } from '../utils/mutations'
 
-    console.log(review)
+const Comment = ({ reviewId }) => {
 
-    const [comment, setComment] = useState('')
+    const [commentBody, setCommentBody] = useState('');
+    const [addComment, {error}] = useMutation(ADD_COMMENT);
 
-    // function handleSubmit(e) {
-    //     e.preventDefault();
-    //     if(comment) {
-    //         const newComment = {comment};
-    //         console.log(newComment);
-    //         setComment('')
-    //     } else {
-    //         console.error(e)
-    //     }
-    // }
+    // update state based on form input
+    const handleChange = (event) => {
+        setCommentBody(event.target.value);
+    };
+    
+    // submit form
+    const handleFormSubmit = async (event) => {
+        event.preventDefault();
+
+        try {
+            await addComment({
+                variables: { commentBody, reviewId }
+            });
+
+            setCommentBody('');
+        } catch (e) {
+            console.error(e);
+        }
+    }
 
     return(
         <div className='comment-formWrapper'>   
             <form 
                 className='comment-form'
-                >
-                {/* if user logged in, have user name pulled from user and inserted into label */}
-            
+                onSubmit={handleFormSubmit}
+            >
                 <textarea 
                     className='comment-input'
+                    placeholder='leave a comment!'
                     type='text'
                     name='comment'
                     rows='4'
-                    value={comment}
-                    onChange={(e) => setComment(e.target.value)}
+                    value={commentBody}
+                    onChange={handleChange}
                 />
-                <button className='comment-btn'>Add Comment</button>
+                <button
+                    className='comment-btn'
+                    type='submit'
+                >
+                    Add Comment
+                </button>
             </form>
         </div>
-        
     )
 }
 

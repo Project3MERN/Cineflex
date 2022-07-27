@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 
 import Comment from '../components/Comment'
 import PostEdit from '../components/PostEdit';
+import Auth from '../utils/auth';
 
 import { useQuery } from '@apollo/client';
 import { SINGLE_REVIEW } from '../utils/queries';
@@ -45,7 +46,7 @@ const  SinglePost = (props) => {
                   <div>{review.createdAt}</div>
                 </div>
               </div>
-              <Comment review={review.comments}/>
+              {Auth.loggedIn() && <Comment reviewId={review._id}/>}
               {review.comments.map(comment => (
                 <div key={comment.id}>
                   <h3>{comment.username}</h3>
