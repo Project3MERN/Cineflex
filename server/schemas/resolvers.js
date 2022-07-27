@@ -1,6 +1,7 @@
 const { User, Movie, Review } = require("../models");
 const { AuthenticationError } = require("apollo-server-express");
 const { signToken } = require("../utils/auth");
+const stripe = require('stripe')('sk_test_4eC39HqLyjWDarjtT1zdp7dc');
 
 const resolvers = {
     Query: {
@@ -33,6 +34,35 @@ const resolvers = {
         },
         review: async (parent, { _id }) => {
             return Review.findOne({ _id }).populate('movie').populate('comments').sort({ createdAt: -1 })
+        },
+        checkout: async (parent, args, context) => {
+            const line_items = [];
+
+            const product = await stripe.products.create({
+                name: "Donation",
+                description: "A generous donation!",
+            });
+
+            const price = await stripe.prices.create({
+                product: product.id,
+                unit_amount: args.donation * 100,
+                currency: 'usd'
+            })
+
+            line_items.push({
+                price: price.id,
+                quantity: 1
+            })
+
+            const session = await stripe.checkout.sessions.create({
+                payment_method_types: ['card'],
+                line_items,
+                mode: 'payment',
+                success_url: 'https://example.com/success?session_id={CHECKOUT_SESSION_ID}',
+                cancel_url: 'https://example.com/cancel'
+            });
+
+            return { session: session.id };
         }
     },
     Mutation: {

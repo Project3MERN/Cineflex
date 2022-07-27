@@ -40,6 +40,10 @@ const typeDefs = gql`
         user: User
     }
 
+    type Checkout {
+        session: ID
+    }
+
     type Query {
         allUsers: [User]
         loggedInUser: User
@@ -48,6 +52,7 @@ const typeDefs = gql`
         allReviews: [Review]
         movie(_id: ID!): Movie
         review(_id: ID!): Review
+        checkout(donation: Int!): Checkout
     }
 
     type Mutation {

@@ -157,3 +157,11 @@ export const LOGGED_IN_USER = gql`
     }
   }
 `
+
+export const QUERY_CHECKOUT = gql`
+  query Checkout($donation: Int!) {
+    checkout(donation: $donation) {
+      session
+    }
+  }
+`
