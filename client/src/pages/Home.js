@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react";
-import Post from "../components/Post";
 
-import { useQuery, useLazyQuery } from '@apollo/client';
-import { GET_ALLREVIEWS, QUERY_CHECKOUT } from '../utils/queries';
+import { useLazyQuery } from '@apollo/client';
+import { QUERY_CHECKOUT } from '../utils/queries';
 import "../css/home.css";
 import { Link } from 'react-router-dom';
 import { loadStripe } from '@stripe/stripe-js';
@@ -40,7 +39,7 @@ const Home = () => {
       <div className="home_hero">
         <h1>Welome to Cineflex!</h1>
         <p style={{ color: "black" }}>
-          A film-based social media site for mover lovers around
+          A film-based social media site for movie lovers around
           the globe.
         </p>
       </div>
