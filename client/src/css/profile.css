@@ -1,0 +1,55 @@
+.profile {
+    text-align: center;
+}
+
+.profile-movies {
+    overflow: hidden;
+    box-shadow: 0 2px 20px grey;
+    border-radius: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 200ms ease-in;
+    background-color: #1e1e1e;
+    color: white;
+    margin: 1% 2%;
+    border-radius: 10px;
+    padding: 1%;
+    width: 100%;
+}
+
+.reviewsInProfile {
+    margin-top: 50px;
+}
+
+.reviewButton {
+    background-color: beige;
+    color: #bb883b;
+    border: 1px solid #bb883b;
+    border-radius: 10px;
+    font-size: 20px;
+    white-space: initial;
+}
+
+.profileReviewImage {
+    margin-top: 10px;
+}
+
+.profileReviewImage img {
+    width: 50px;
+}
+
+.profileCard {
+    background-color: #1e1e1e;
+    color: white;
+    margin: 1% 2%;
+    border-radius: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.profileReviewContent b {
+    text-decoration: underline;
+}
