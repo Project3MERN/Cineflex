@@ -2,7 +2,11 @@ let CACHE_NAME = 'Cineflex-V1'
 const urlsToCache = [
     '/',
     '/index.html',
-    '/profile'
+    '/profile',
+    '/explore',
+    '/movies',
+    '/login',
+    '/signup'
 ];
 
 self.addEventListener('install', function (event) {
