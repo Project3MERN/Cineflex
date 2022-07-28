@@ -18,6 +18,10 @@ nav ul li{
     margin-left: 50px;
 }
 
+.navBar-movies {
+    margin-right: 50px;
+}
+
 a {
     text-decoration: none;
 }

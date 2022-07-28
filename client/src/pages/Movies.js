@@ -12,17 +12,19 @@ const Movie = () => {
   }
   return (
     <div className="movies">
-      <h1>Movies</h1>
+      <h1 className="movies-title">Movies</h1>
       {movies.map((movie) => {
         return (
           <div className="movie_list" key={movie._id}>
-            <p>Movie: {movie.name}</p>
-            <p className="rating">Average Score: {movie.averageScore}</p>
+            <div>
+            <p>{movie.name}</p>
+            <p className="rating">{movie.averageScore}</p>
             <Link className="movie_link" to={`/movie/${movie._id}`}>
               <p>
                 <u>View Reviews &rarr;</u>
               </p>
             </Link>
+            </div>
           </div>
         );
       })}

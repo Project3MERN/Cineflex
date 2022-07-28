@@ -32,7 +32,7 @@ const NavBar = () => {
                         Feed
                     </Link>
                 </li>
-                <li>
+                <li classname='navBar-movies'>
                     <Link to="/movies">
                         Movies
                     </Link>

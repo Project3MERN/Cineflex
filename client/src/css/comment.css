@@ -6,6 +6,7 @@
 
 .comment-form {
     width: 40%;
+    margin-top: 15px;
 }
 
 .comment-label {
@@ -39,47 +40,203 @@
     margin-top: 1%;
 }
 
-@media all and (max-width: 1200px ){
-    .comment-input{
-    width: 100%;
+.comments-wrapper {
+    text-align: center;
+    background-color: beige;
+    color: black;
+}
+
+@media screen and (max-width: 2320px) {
+    .comments-wrapper {
+      margin: 20px 900px;
+      border-radius: 15px;
     }
-    .comment-btn{
-    width: 100%;
+}
+  
+@media screen and (max-width: 2110px) {
+    .comments-wrapper {
+      margin: 20px 850px;
+      border-radius: 15px;
+    }
+}
+ 
+@media screen and (max-width: 2020px) {
+    .comments-wrapper {
+      margin: 20px 800px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 1910px) {
+    .comments-wrapper {
+      margin: 20px 750px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 1800px) {
+    .comments-wrapper {
+      margin: 20px 700px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 1685px) {
+    .comments-wrapper {
+      margin: 20px 650px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 1590px) {
+    .comments-wrapper {
+      margin: 20px 600px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 1480px) {
+    .comments-wrapper {
+      margin: 20px 550px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 1365px) {
+    .comments-wrapper {
+      margin: 20px 500px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 1275px) {
+    .comments-wrapper {
+      margin: 20px 450px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 1200px) {
+    .comments-wrapper {
+      margin: 20px 400px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 1111px) {
+    .comments-wrapper {
+      margin: 20px 375px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 1050px) {
+    .comments-wrapper {
+      margin: 20px 350px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 1000px) {
+    .comments-wrapper {
+      margin: 20px 325px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 940px) {
+    .comments-wrapper {
+      margin: 20px 300px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 880px) {
+    .comments-wrapper {
+      margin: 20px 275px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 810px) {
+    .comments-wrapper {
+      margin: 20px 250px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 760px) {
+    .comments-wrapper {
+      margin: 20px 225px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 726px) {
+    .comments-wrapper {
+      margin: 20px 200px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 680px) {
+    .comments-wrapper {
+      margin: 20px 175px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 635px) {
+    .comments-wrapper {
+      margin: 20px 150px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 575px) {
+    .comments-wrapper {
+      margin: 20px 125px;
+      border-radius: 15px;
+    }
+}
+  
+@media screen and (max-width: 500px) {
+    .comments-wrapper {
+      margin: 20px 100px;
+      border-radius: 15px;
     }
 }
 
-@media all and (max-width: 992px ){
-    .comment-input{
-    width: 80%;
-    }
-    .comment-btn{
-    width: 80%;   
-    }
-    .comment-form{
-    width: 30%;    
+@media screen and (max-width: 475px) {
+    .comment-form {
+        width: 80%;
     }
 }
-
-@media all and (max-width: 768px ){
-    .comment-input{
-        width: 60%
-    }
-    .comment-btn{
-        width: 60%    
-    }
-.comment-form{
-        width: 20%    
+  
+@media screen and (max-width: 450px) {
+    .comments-wrapper {
+      margin: 20px 80px;
+      border-radius: 15px;
     }
 }
-
-@media all and (max-width: 600px ){
-    .comment-input{
-        width: 50%
+  
+@media screen and (max-width: 410px) {
+    .comments-wrapper {
+      margin: 20px 65px;
+      border-radius: 15px;
     }
-    .comment-btn{
-        width: 50%    
+}
+  
+@media screen and (max-width: 365px) {
+    .comments-wrapper {
+      margin: 20px 50px;
+      border-radius: 15px;
     }
-    .comment-form{
-        width: 10%    
+}
+  
+@media screen and (max-width: 325px) {
+    .comments-wrapper {
+      margin: 20px 30px;
+      border-radius: 15px;
     }
 }
