@@ -16,6 +16,7 @@ const Movie = () => {
       {movies.map((movie) => {
         return (
           <div className="movie_list" key={movie._id}>
+            <div>
             <p>{movie.name}</p>
             <p className="rating">{movie.averageScore}</p>
             <Link className="movie_link" to={`/movie/${movie._id}`}>
@@ -23,6 +24,7 @@ const Movie = () => {
                 <u>View Reviews &rarr;</u>
               </p>
             </Link>
+            </div>
           </div>
         );
       })}
