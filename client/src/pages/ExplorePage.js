@@ -16,10 +16,10 @@ function ExplorePage({ posts, setPosts }) {
     return(
         <div>
             {loggedIn && <>
-                <h2>Create</h2>
+                <h2 className='create-title'>Create</h2>
                 <CreatePost />
             </>}
-            <h2>Feed</h2>
+            <h2 className='feed-title'>Feed</h2>
             { loading ? (
                 <div>Loading...</div>
             ) : (

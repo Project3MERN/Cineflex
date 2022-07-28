@@ -38,7 +38,7 @@ const Home = () => {
   return (
     <div className="home">
       <div className="home_hero">
-        <h1>Welome to Cineflex!</h1>
+        <h1>Welcome to Cineflex!</h1>
         <p style={{ color: "black" }}>
           A film-based social media site for mover lovers around
           the globe.

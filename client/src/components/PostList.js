@@ -15,7 +15,12 @@ function PostList({ reviews }) {
                     <div key={review._id} className="PostCard">
                         <div className = "PostDetails">
                             <h3>
-                                {review.movie[0].name}
+                                <Link
+                                    to={`/review/${review._id}`}
+                                    className='post-Link'
+                                >
+                                    {review.movie[0].name}
+                                </Link>
                             </h3>
                             <p>
                                 by {review.username}
@@ -23,12 +28,9 @@ function PostList({ reviews }) {
                             <p className = "Rating">{review.score}/5</p>
                             <p>{review.reviewText}</p>
                             <div>
-                                <Link
-                                    to={`/review/${review._id}`}
-                                    className='post-Link'
-                                >
+                                
                                     {review.createdAt}
-                                </Link>
+                                
                             </div>
                             <span></span>
                         </div>
