@@ -11,6 +11,7 @@ import Movie from './pages/Movies'
 import SingleMovie from './pages/SingleMovie'
 import SinglePost from './pages/SinglePost'
 import Profile from './pages/Profile'
+import Success from './pages/Success';
 import './css/app.css'
 // import Dashboard from "./pages/Dashboard";
 import Create from './pages/Create'
@@ -86,6 +87,10 @@ function App() {
             <Route
               path="/review/:id"
               element={<SinglePost />}
+            />
+            <Route 
+              path = "/success" 
+              element={<Success />} 
             />
           </Routes>
         </main>
