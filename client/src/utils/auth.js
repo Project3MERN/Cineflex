@@ -36,7 +36,7 @@ class AuthService {
     // set token to local storage and reload to homepage
     login(idToken) {
         localStorage.setItem('id_token', idToken);
-        window.location.assign('/profile');
+        window.location.assign('/');
     };
 
     logout() {
