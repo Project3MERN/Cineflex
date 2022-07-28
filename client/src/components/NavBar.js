@@ -39,9 +39,11 @@ const NavBar = () => {
                 </li>
                 {Auth.loggedIn() ? (
                     <>
-                        <a href="/" onClick={logout}>
-                            Logout
-                        </a>
+                        <li>
+                            <a href="/" onClick={logout}>
+                                Logout
+                            </a>
+                        </li>
                     </>
                 ) : (
                     <>
