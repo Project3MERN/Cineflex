@@ -1,7 +1,7 @@
 .PostCard {
   background-color: #1e1e1e;
   color: white;
-  margin: 1% 2%;
+  margin: 20px 900px;
   border-radius: 25px;
   box-shadow: 0 2px 20px grey;
 }
@@ -59,145 +59,145 @@
 
 @media screen and (max-width: 2320px) {
   .PostCard {
-    margin: 20px 900px;
+    margin: 20px 850px;
   }
 }
 
 @media screen and (max-width: 2110px) {
   .PostCard {
-    margin: 20px 850px;
+    margin: 20px 800px;
   }
 }
 
 @media screen and (max-width: 2020px) {
   .PostCard {
-    margin: 20px 800px;
+    margin: 20px 750px;
   }
 }
 
 @media screen and (max-width: 1910px) {
   .PostCard {
-    margin: 20px 750px;
+    margin: 20px 700px;
   }
 }
 
 @media screen and (max-width: 1800px) {
   .PostCard {
-    margin: 20px 700px;
+    margin: 20px 650px;
   }
 }
 
 @media screen and (max-width: 1685px) {
   .PostCard {
-    margin: 20px 650px;
+    margin: 20px 600px;
   }
 }
 
 @media screen and (max-width: 1590px) {
   .PostCard {
-    margin: 20px 600px;
+    margin: 20px 550px;
   }
 }
 
 @media screen and (max-width: 1480px) {
   .PostCard {
-    margin: 20px 550px;
+    margin: 20px 500px;
   }
 }
 
 @media screen and (max-width: 1365px) {
   .PostCard {
-    margin: 20px 500px;
+    margin: 20px 5450px;
   }
 }
 
 @media screen and (max-width: 1275px) {
   .PostCard {
-    margin: 20px 450px;
+    margin: 20px 400px;
   }
 }
 
 @media screen and (max-width: 1200px) {
   .PostCard {
-    margin: 20px 400px;
+    margin: 20px 375px;
   }
 }
 
 @media screen and (max-width: 1111px) {
   .PostCard {
-    margin: 20px 375px;
+    margin: 20px 350px;
   }
 }
 
 @media screen and (max-width: 1050px) {
   .PostCard {
-    margin: 20px 350px;
+    margin: 20px 325px;
   }
 }
 
 @media screen and (max-width: 1000px) {
   .PostCard {
-    margin: 20px 325px;
+    margin: 20px 300px;
   }
 }
 
 @media screen and (max-width: 940px) {
   .PostCard {
-    margin: 20px 300px;
+    margin: 20px 275px;
   }
 }
 
 @media screen and (max-width: 880px) {
   .PostCard {
-    margin: 20px 275px;
+    margin: 20px 250px;
   }
 }
 
 @media screen and (max-width: 810px) {
   .PostCard {
-    margin: 20px 250px;
+    margin: 20px 225px;
   }
 }
 
 @media screen and (max-width: 760px) {
   .PostCard {
-    margin: 20px 225px;
+    margin: 20px 200px;
   }
 }
 
 @media screen and (max-width: 726px) {
   .PostCard {
-    margin: 20px 200px;
+    margin: 20px 175px;
   }
 }
 
 @media screen and (max-width: 680px) {
   .PostCard {
-    margin: 20px 175px;
+    margin: 20px 150px;
   }
 }
 
 @media screen and (max-width: 635px) {
   .PostCard {
-    margin: 20px 150px;
+    margin: 20px 125px;
   }
 }
 
 @media screen and (max-width: 575px) {
   .PostCard {
-    margin: 20px 125px;
+    margin: 20px 100px;
   }
 }
 
 @media screen and (max-width: 500px) {
   .PostCard {
-    margin: 20px 100px;
+    margin: 20px 80px;
   }
 }
 
 @media screen and (max-width: 450px) {
   .PostCard {
-    margin: 20px 80px;
+    margin: 20px 70px;
   }
 }
 
