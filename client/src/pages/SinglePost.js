@@ -48,7 +48,7 @@ const  SinglePost = (props) => {
           </div>
           {Auth.loggedIn() && <Comment reviewId={review._id}/>}
           {review.comments.map(comment => (
-            <div key={comment.id}>
+            <div key={comment.id} className='comments-wrapper'>
                <h3>{comment.username}</h3>
                <div>{comment.commentBody}</div>
                <div>{comment.createdAt}</div>
