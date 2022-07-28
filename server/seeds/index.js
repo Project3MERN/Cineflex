@@ -17,6 +17,21 @@ const movieData = [
     },
     {
         name: "Avengers: Infinite War"
+    },
+    {
+        name: "Spider-Man: No Way Home"
+    },
+    {
+        name: "The Joker"
+    },
+    {
+        name: 'Lord of the Rings'
+    },
+    {
+        name: "Revenge of the Sith"
+    },
+    {
+        name: "Inception"
     }
 ]
 
@@ -28,20 +43,20 @@ db.once('open', async () => {
     // create users
     const userData = [];
 
-    for(let i = 0; i < 10; i++) {
+    for (let i = 0; i < 10; i++) {
         const username = faker.internet.userName();
         const email = faker.internet.email(username);
         const password = faker.internet.password();
 
-        userData.push({ username, email, password});
+        userData.push({ username, email, password });
     };
 
     const createdUsers = await User.collection.insertMany(userData);
 
     // create movies
     const createdMovies = await Movie.collection.insertMany(movieData);
-    
-    
+
+
     // create reviews
     let createdReviews = [];
     for (let i = 0; i < 50; i++) {
@@ -51,7 +66,7 @@ db.once('open', async () => {
         // pick random user for review
         const randomUserIndex = Math.floor(Math.random() * createdUsers.ops.length);
         const { username, _id: userId } = createdUsers.ops[randomUserIndex];
-        
+
         // pick a random movie for review
         const randomMovieIndex = Math.floor(Math.random() * createdMovies.ops.length);
         const { _id: movieId } = createdMovies.ops[randomMovieIndex];
@@ -68,19 +83,19 @@ db.once('open', async () => {
         // update review
         const updatedReview = await Review.updateOne(
             { _id: createdReview._id },
-            { $push: { movie: movieId }}
+            { $push: { movie: movieId } }
         )
 
         // update user
         const updatedUser = await User.updateOne(
             { _id: userId },
-            { $push: { reviews: createdReview._id }}
+            { $push: { reviews: createdReview._id } }
         );
 
         // update movie
         const updatedMovie = await Movie.updateOne(
             { _id: movieId },
-            { $push: { reviews: createdReview._id }}
+            { $push: { reviews: createdReview._id } }
         )
     }
 
