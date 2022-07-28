@@ -43,10 +43,10 @@ const Signup = () => {
 
     return (
         <div className="login">
-            <div className="UserFormWrapper"> 
+            <div className="userFormWrapper"> 
                 <h2 className="login-title">Signup</h2>
                 <p className="login-p"> Cineflex&trade; is excited to get you started! </p>
-                <form className="UserForm" onSubmit={handleFormSubmit}>
+                <form className="userForm" onSubmit={handleFormSubmit}>
                     <div>
                         <label className="login-label" htmlFor="username">Username:</label>
                         <input className="login-input" name="username" type="text" id="username" value={formState.username} onChange={handleChange}/>
@@ -60,7 +60,7 @@ const Signup = () => {
                         <input className="login-input" name="password" type="password" id="password" value={formState.password} onChange={handleChange}/>
                     </div>
                     <button className="login-btn" type="submit"> Sign Up </button>
-                    <p>Already a user? Login <Link to="/login"><span>here</span></Link> instead!</p>
+                    <p>Already a user? Login <Link to="/login"><span className="login-signup-here">here</span></Link> instead!</p>
                 </form>
                 {error && <div>Something went wrong! Please try again.</div>}
                     

@@ -5,8 +5,11 @@
     background-size: cover;
     align-items: center;
     height: 600px;
-    background-image: url('../assets/images/create-post.jpg');
-    color: white ;
+    background-image: url('../assets/images/create-post-theatre-seats.jpg');
+}
+
+.create-title {
+    margin-left: 25px;
 }
 
 .createPost-form {
@@ -19,9 +22,9 @@
 .createPost-label {
     margin: 10px 0;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.7);
-    width: 12%;
-    text-align: center;
+    color: white;
+    font-size: larger;
+    font-weight: 900;
 }
 
 .createPost-input {
@@ -55,40 +58,4 @@
     color: black;
     min-height: 40px;
     margin-top: 1%;
-}
-
-@media all and (max-width: 1200px ){
-    .createPost-form{
-        width: 100%;
-    }
-    .createPost-btn{
-        width: 100%;   
-    }
-}
-
-@media all and (max-width: 992px ){
-    .createPost-form{
-        width: 80%
-}
-    .createPost-btn{
-        width: 80%    
-    }
-}
-
-@media all and (max-width: 768px ){
-    .createPost-form{
-        width: 60%
-    }
-    .createPost-btn{
-        width: 60%    
-    }
-}
-
-@media all and (max-width: 600px ){
-    .createPost-form{
-        width: 50%
-    }
-    .createPost-btn{
-        width: 50%    
-    }
 }
