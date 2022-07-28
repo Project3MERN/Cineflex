@@ -1,0 +1,91 @@
+.edit-form-wrapper {
+    margin-top: 100px;
+    margin-left: 400px;
+    width: 50%;
+    background-color: #1E1E1E;
+    height: 500px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 3px 7px 2px rgba(0,0,0,0.3);
+    float: inline-start;
+}
+
+.modal-active {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto, 2);
+    row-gap: 5px;
+    column-gap: 40px;
+    color: white;
+}
+
+.postEdit-btn {
+    background-color: white;
+    border: none;
+    width: 7%;
+    justify-self: end;
+    padding: 2px 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: bolder;
+}
+
+.postEdit-input {
+    line-height: 25px;
+    margin-bottom: 15px;
+    font-weight: bold;
+    font-size: 24;
+}
+
+.postEdit-label {
+    margin-bottom: 25px;
+    font-size: 24px;
+    font-weight: 700;
+}
+
+@media all and (max-width: 1200px ){
+    .edit-form-wrapper{
+        width:50%
+    }
+
+    .postEdit-btn{
+        width: 7%
+    }
+}
+
+@media all and (max-width: 992px ){
+    .edit-form-wrapper{
+        width:40%
+    }
+
+    .postEdit-btn{
+        width: 6%
+    }
+}
+
+@media all and (max-width: 768px ){
+    .edit-form-wrapper{
+        width:30%
+    }
+    
+    .postEdit-btn{
+        width: 5%
+    }
+} 
+     
+@media all and (max-width: 600px ){
+    .edit-form-wrapper{
+        width:20%
+    }
+
+    .postEdit-btn{
+        width: 4%
+    }
+}
+
+
+

@@ -1,0 +1,87 @@
+.dashboard {
+  margin: 2rem;
+}
+
+.dashbanner {
+  background-color: #bb883b;
+}
+
+h1,
+h2,
+h3 {
+  color: #bb883b;
+}
+
+p {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.card {
+  overflow: hidden;
+  box-shadow: 0 2px 20px grey;
+  border-radius: 10%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  transition: transform 200ms ease-in;
+}
+
+.card .card_image {
+  height: 12rem;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card .card_title {
+  padding: 1rem;
+}
+
+.card .card_body {
+  padding: 0 1rem;
+}
+
+.card .card_btn {
+  padding: 1rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: 1rem;
+  border: 2px solid #bb883b;
+  border-radius: 10%;
+  background: transparent;
+  transition: background 200ms ease-in, color 200ms ease-in;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card:hover .card_btn:hover {
+  background: #bb883b;
+  color: white;
+}
+
+@media all and (max-width: 1200px ){
+  .card_image{
+    width: 100%
+  }
+}
+
+@media all and (max-width: 992px ){
+  .card_image{
+    width: 80%
+  }
+}
+
+@media all and (max-width: 768px ){
+  .card_image{
+    width: 60%
+  }
+}
+
+@media all and (max-width: 600px ){
+  .card_image{
+    width: 100%
+  }
+}
